@@ -486,7 +486,6 @@ const PHOTOS=[
   [W+'thumb/mentorship.jpg',W+'full/mentorship.jpg','events','Community','Mentorship',1.499],
   [W+'thumb/camp25-dusk.jpg',W+'full/camp25-dusk.jpg','events','ICPC Camp 2025','Dusk',1.5],
   [W+'thumb/aljazeera-800m.jpg',W+'full/aljazeera-800m.jpg','film','Al Jazeera · 800 Meters','Documentary set',1.503],
-  [W+'thumb/camp25-flag.jpg',W+'full/camp25-flag.jpg','events','ICPC Camp 2025','Capture the flag',0.75],
   [W+'thumb/conversation.jpg',W+'full/conversation.jpg','events','Community','Conversation',1.498],
   [W+'thumb/fireworks.jpg',W+'full/fireworks.jpg','portraits','Blue hour','Far away',0.799],
   [W+'thumb/giant-chair.jpg',W+'full/giant-chair.jpg','events','ICPC Camp 2022','The giant chair',0.75],
@@ -495,13 +494,10 @@ const PHOTOS=[
   [W+'thumb/graduation.jpg',W+'full/graduation.jpg','portraits','Portrait','Graduation day',1.339],
   [W+'thumb/lakeside.jpg',W+'full/lakeside.jpg','portraits','Portrait','Lakeside',1.498],
   [W+'thumb/camp21-thumbs.jpg',W+'full/camp21-thumbs.jpg','events','Camp 2021','Good energy',1.0],
-  [W+'thumb/camp25-volley.jpg',W+'full/camp25-volley.jpg','events','ICPC Camp 2025','Game point',0.75],
   [W+'thumb/camp-smile.jpg',W+'full/camp-smile.jpg','events','ICPC Camp','Between sessions',1.333],
   [W+'thumb/camp25-listening.jpg',W+'full/camp25-listening.jpg','events','ICPC Camp 2025','Listening',0.75],
   [W+'thumb/camp25-net.jpg',W+'full/camp25-net.jpg','events','ICPC Camp 2025','Behind the net',0.798],
   [W+'thumb/woods.jpg',W+'full/woods.jpg','portraits','Portrait','In the woods',1.498],
-  [W+'thumb/somehow-somewhere.jpg',W+'full/somehow-somewhere.jpg','portraits','Landscape','Somehow, somewhere',1.5],
-  [W+'thumb/camp25-golden.jpg',W+'full/camp25-golden.jpg','events','ICPC Camp 2025','Golden hour',0.8],
   [W+'thumb/snow-lamp.jpg',W+'full/snow-lamp.jpg','portraits','Night','Under the lamp',0.8],
   [W+'thumb/circle-under-trees.jpg',W+'full/circle-under-trees.jpg','events','Community','Circle under the trees',0.667],
   [W+'thumb/above-clouds.jpg',W+'full/above-clouds.jpg','portraits','Landscape','Above the clouds',0.668],
@@ -519,7 +515,6 @@ const PHOTOS=[
   [W+'thumb/camp25-storyteller.jpg',W+'full/camp25-storyteller.jpg','events','ICPC Camp 2025','Stories by the fire',0.75],
   [W+'thumb/bonfire-stars.jpg',W+'full/bonfire-stars.jpg','events','Camp','Sparks and stars',0.75],
   [W+'thumb/camp25-torches.jpg',W+'full/camp25-torches.jpg','events','ICPC Camp 2025','Fire torches',1.5],
-  [W+'thumb/camp25-bonfire.jpg',W+'full/camp25-bonfire.jpg','events','ICPC Camp 2025','The bonfire',1.495],
   [W+'thumb/camp21-run.jpg',W+'full/camp21-run.jpg','events','Camp 2021','Sprint',1.0],
   [W+'thumb/ferris-wheel.jpg',W+'full/ferris-wheel.jpg','portraits','Portrait','City lights',0.8],
 ];
@@ -544,7 +539,7 @@ const REELS=[
 ];
 
 /* ---------- Build: marquee ---------- */
-const pick=['lake-sunset','veiled-storefront','camp23-huddle','camp25-volley','camp25-marshmallows','fireworks','aljazeera-rig','speaker','camp25-marshmallows','above-clouds','ummah-professionals','giant-chair','soccer','camp21-thumbs'];
+const pick=['lake-sunset','veiled-storefront','camp23-huddle','camp24-hype','camp25-marshmallows','fireworks','aljazeera-rig','speaker','camp25-marshmallows','above-clouds','ummah-professionals','giant-chair','soccer','camp21-thumbs'];
 const half=Math.ceil(pick.length/2);
 [[pick.slice(0,half),'mRow1'],[pick.slice(half),'mRow2']].forEach(([list,id])=>{
   const html=list.map(n=>`<img src="${W}thumb/${n}.jpg" alt="" loading="lazy">`).join('');
