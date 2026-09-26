@@ -1,281 +1,420 @@
-  <!-- timeline section -->
-  <!-- background animation on top? -->
-  <!-- experiences section -->
-  <!-- change project link to brown and center them and make them nice -->
-  <!-- project page when you click link -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-EJN18TSWLN"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-EJN18TSWLN');
+  </script>
 
-  <!DOCTYPE html>
-  <html lang="en">
-  <head>
-<style>
-  .button-logo-small {
-  width: 50px; /* Adjust the width to your desired size */
-  height: auto; /* Maintain aspect ratio */
-}
+  <link rel="icon" href="img/100pxtab_icon.png" type="image/x-icon">
 
-</style>
-    <!-- Google tag (gtag.js) -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-EJN18TSWLN"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
+  <meta property="og:title" content="Baraa Nassar — Builder &amp; Visual Storyteller">
+  <meta property="og:description" content="I build the system and shoot the visuals. Software, photography, and video by Baraa Nassar.">
+  <meta property="og:image" content="img/100pxtab_icon.png">
+  <meta property="og:url" content="http://baraa2nassar.com/">
+  <meta property="og:type" content="profile">
+  <meta property="og:first_name" content="Baraa">
+  <meta property="og:last_name" content="Nassar">
+  <meta property="og:username" content="baraa2nassar">
 
-      gtag('config', 'G-EJN18TSWLN');
-    </script>
-    <link rel="icon" href="img/100pxtab_icon.png" type="image/x-icon">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Baraa Nassar — I build the system and shoot the visuals. Software engineering, photography, and video.">
 
-    <meta property="og:title" content="Baraa Nassar">
-    <meta property="og:description" content="Baraa Nassar Online Portfolio">
-    <meta property="og:image" content="img/100pxtab_icon.png">
-    <meta property="og:url" content="http://baraa2nassar.com/">
-    <meta property="og:type" content="profile">
-    <meta property="og:first_name" content="Baraa">
-    <meta property="og:last_name" content="Nassar">
-    <meta property="og:username" content="baraa2nassar">
+  <title>Baraa Nassar — Builder &amp; Visual Storyteller</title>
 
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" type="text/css" href="css/styles.css">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Poppins:300,400,500,600,700&display=swap" rel="stylesheet">
 
+  <style>
+    /* ---- Hero ---- */
+    .hero {
+      position: relative;
+      overflow: hidden;
+      z-index: 1;
+    }
+    .hero-portrait {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border: 3px solid rgba(255,255,255,0.85);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.4);
+    }
+    .hero-headline {
+      font-weight: 700;
+      letter-spacing: -0.5px;
+      line-height: 1.15;
+    }
+    .hero-headline .accent { color: #e8c87a; }
+    .hero-sub {
+      color: #d8d4d4;
+      max-width: 640px;
+      margin: 0 auto;
+    }
 
-    <link rel="icon" href="../img/100pxtab_icon.png" type="image/x-icon" alt="baraa logo">
+    /* ---- Filter bar ---- */
+    .filter-bar {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      justify-content: center;
+      margin-bottom: 2.5rem;
+    }
+    .filter-btn {
+      border: 1px solid #c9c5c5;
+      background: transparent;
+      color: #464242;
+      padding: 8px 22px;
+      border-radius: 999px;
+      font-weight: 500;
+      font-size: 0.95rem;
+      transition: all 0.2s ease;
+    }
+    .filter-btn:hover { border-color: #464242; }
+    .filter-btn.active {
+      background: #322D2D;
+      border-color: #322D2D;
+      color: #fff;
+    }
 
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    /* ---- Work grid ---- */
+    .work-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+      gap: 22px;
+    }
+    .work-card {
+      position: relative;
+      background: #fff;
+      border-radius: 14px;
+      overflow: hidden;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.08);
+      transition: transform 0.22s ease, box-shadow 0.22s ease;
+    }
+    .work-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 14px 30px rgba(0,0,0,0.18);
+    }
+    .work-card a { text-decoration: none; color: inherit; display: block; }
+    .work-thumb {
+      position: relative;
+      aspect-ratio: 16 / 10;
+      overflow: hidden;
+      background: #2a2727;
+    }
+    .work-thumb img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      transition: transform 0.35s ease;
+    }
+    .work-card:hover .work-thumb img { transform: scale(1.05); }
+    .work-meta { padding: 16px 18px 20px; }
+    .work-meta h3 { font-size: 1.18rem; font-weight: 600; margin: 8px 0 4px; }
+    .work-meta p { font-size: 0.92rem; color: #6a6565; margin: 0; line-height: 1.45; }
 
+    .work-tag {
+      display: inline-block;
+      font-size: 0.72rem;
+      font-weight: 600;
+      letter-spacing: 0.6px;
+      text-transform: uppercase;
+      padding: 3px 10px;
+      border-radius: 999px;
+    }
+    .tag-dev   { background: #e3edf3; color: #2c5f7c; }
+    .tag-photo { background: #f6ecd6; color: #9a7322; }
+    .tag-video { background: #f4dede; color: #9c3b3b; }
 
-    <title>Baraa Nassar</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    /* play icon for video cards */
+    .play-badge {
+      position: absolute;
+      top: 50%; left: 50%;
+      transform: translate(-50%, -50%);
+      width: 58px; height: 58px;
+      border-radius: 50%;
+      background: rgba(0,0,0,0.55);
+      display: flex; align-items: center; justify-content: center;
+      color: #fff; font-size: 1.3rem;
+      transition: background 0.2s ease;
+    }
+    .work-card:hover .play-badge { background: rgba(156,59,59,0.9); }
 
+    .is-hidden { display: none !important; }
 
+    /* fade-in on filter */
+    .work-card { animation: fadeUp 0.4s ease both; }
+    @keyframes fadeUp {
+      from { opacity: 0; transform: translateY(12px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+<body>
 
-
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.9.3/css/bulma.min.css" integrity="sha512-4Y4a/wl4Xl/zdL58cS+pS5zNTmCgx0a2Q0OG4+4J4YyM4jmX9dLLJt+lOVo1wtapNtK+k+OgNvA/04bBy2+C+A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-
-    <link rel="stylesheet" type="text/css" href="css/styles.css">
-
-    <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css"
-    rel="stylesheet"
-  />
-  <!-- Google Fonts -->
-  <link
-    href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-    rel="stylesheet"
-  />
-  <!-- MDB -->
-  <link
-    href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.css"
-    rel="stylesheet"
-  />
-
-
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
-  </head>
-  <body >
 <div id="navbar-placeholder"></div>
-
 <script>
   fetch('header.html')
     .then(response => response.text())
-    .then(data => {
-      document.getElementById('navbar-placeholder').innerHTML = data;
-    })
+    .then(data => { document.getElementById('navbar-placeholder').innerHTML = data; })
     .catch(error => console.error('Error loading header:', error));
 </script>
 
-    
-<!-- <div style="position: relative;"> -->
+<!-- ===================== HERO ===================== -->
+<header id="about-me" class="hero container-fluid bg-brown text-white py-5">
+  <div class="shape square" id="shape1"></div>
+  <div class="shape square" id="shape2"></div>
+  <div class="shape x" id="shape3"></div>
+  <div class="shape triangle" id="shape4"></div>
 
-  <div id="about-me" class="container-fluid bg-brown py-5">
-      <div>
-        <div id="shape1" class="shape square"></div>
-        <div id="shape2" class="shape square"></div>
-        <div id="shape1" class="shape square"></div>
-        <div id="shape3" class="shape square"></div>
-        <!-- <div id="shape2" class="shape x"></div> -->
-        <div id="shape3" class="shape x"></div>
-        <div id="shape4" class="shape triangle"></div>
-        <!-- <div id="shape4" class="shape triangle"></div> -->
-      
-
-    <div class="container" style="margin-top: -90px;">
-          <div class="row justify-content-center align-items-center">
-        <div class="col-lg-3 col-md-4 col-6">
-          <img src="img/4baraa.jpg" alt="Baraa Nassar Profile Picture" class="rounded-circle img-fluid">
-        </div>
-
-
-      <h1 class="text-center text-white">Hello I'm Baraa!</h1>
-      <br>
-      </div>
-      <ul class="list-group">
-
-          <section class="my-2 p-2 px-3" style="background-color: #706c6c; border-radius: 10px;">
-            <!-- <i class=" text-white fas fa-laptop-code"></i> -->
-
-          <h1 class="mt-2 fs-3 text-white"><a href="creative.html" class="btn btn-secondary">📷</a> Photographer</h1>
-          <p class="text-light">Capturing moments through a cinematic lens. Specializing in events, creative portraits, and storytelling visuals.</p>
-          </section>
-
-          <section class="my-2 p-2 px-3" style="background-color: #383434; border-radius: 10px;">
-              <h1 class="mt-2 fs-3 text-white">🌱 Volunteer</h1>
-              <p class="text-light ">I am passionate about making a positive impact on society and often volunteer my time to help those in need.</p>
-          </section>
-
-          <section class="my-2 p-2 px-3" style="background-color: #706c6c; border-radius: 10px;">
-          <h1 class="mt-2 fs-3 text-white"><a href="creative.html" class="btn btn-secondary">🎥</a> Video Editor</h1>
-          <p class="text-light">Creativity is an essential part of my life, and I enjoy documenting important moments through storytelling in a creative and unique way.</p>
-
-            </h1>
-            
-          </section>
-
-      </ul>
-
+  <div class="container text-center py-4" style="position: relative; z-index: 2;">
+    <img src="img/4baraa.jpg" alt="Baraa Nassar" class="hero-portrait rounded-circle mb-4">
+    <h1 class="hero-headline display-5 mb-3">
+      I build the system <span class="accent">and</span> shoot the visuals.
+    </h1>
+    <p class="hero-sub fs-5 mb-4">
+      I'm Baraa Nassar — a software engineer, photographer, and video editor.
+      Most people do one. The work below is all three.
+    </p>
+    <div class="d-flex gap-3 justify-content-center flex-wrap">
+      <a href="#work" class="btn btn-light btn-lg px-4">View my work</a>
+      <a href="#contact-me" class="btn btn-outline-light btn-lg px-4">Get in touch</a>
     </div>
+  </div>
+</header>
+
+<!-- ===================== WORK ===================== -->
+<section id="work" class="container-fluid bg-off-white py-5">
+  <div class="container py-3">
+    <h2 class="text-center fw-bold mb-2" style="color:#322D2D;">Selected Work</h2>
+    <p class="text-center text-muted mb-4">Engineering, photography, and video — filter to whatever you came for.</p>
+
+    <!-- Filter bar -->
+    <div class="filter-bar" id="filterBar">
+      <button class="filter-btn active" data-filter="all">All</button>
+      <button class="filter-btn" data-filter="dev">Dev</button>
+      <button class="filter-btn" data-filter="photo">Photo</button>
+      <button class="filter-btn" data-filter="video">Video</button>
+    </div>
+
+    <!-- Grid -->
+    <div class="work-grid" id="workGrid">
+
+      <!-- ===== DEV ===== -->
+      <article class="work-card" data-cat="dev">
+        <a href="project/froogle.html">
+          <div class="work-thumb"><img src="img/froogle_ss.png" alt="Froogle"></div>
+          <div class="work-meta">
+            <span class="work-tag tag-dev">Dev</span>
+            <h3>Froogle <span aria-label="award">🥇</span></h3>
+            <p>3rd-place hackathon win — a smarter way to search and compare.</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="work-card" data-cat="dev">
+        <a href="project/UP.html">
+          <div class="work-thumb"><img src="img/UP_header.png" alt="Ummah Professionals"></div>
+          <div class="work-meta">
+            <span class="work-tag tag-dev">Dev</span>
+            <h3>Ummah Professionals</h3>
+            <p>A platform connecting professionals across a growing community.</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="work-card" data-cat="dev">
+        <a href="project/bank.html">
+          <div class="work-thumb"><img src="img/header_banking.png" alt="Haight Banking"></div>
+          <div class="work-meta">
+            <span class="work-tag tag-dev">Dev</span>
+            <h3>Haight Banking</h3>
+            <p>Full online banking app with admin reporting and audit logs.</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="work-card" data-cat="dev">
+        <a href="project/philoi.html">
+          <div class="work-thumb"><img src="img/philoi_banner.png" alt="Philoi"></div>
+          <div class="work-meta">
+            <span class="work-tag tag-dev">Dev</span>
+            <h3>Philoi</h3>
+            <p>An app built around connection and community.</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="work-card" data-cat="dev">
+        <a href="project/remindME.html">
+          <div class="work-thumb"><img src="img/reminder_banner.png" alt="Remind Me Bot"></div>
+          <div class="work-meta">
+            <span class="work-tag tag-dev">Dev</span>
+            <h3>Remind Me Bot</h3>
+            <p>A Discord bot that keeps tasks and reminders inside your chat.</p>
+          </div>
+        </a>
+      </article>
+
+      <!-- ===== PHOTO ===== -->
+      <article class="work-card" data-cat="photo">
+        <a href="creative/pictures.html">
+          <div class="work-thumb"><img loading="lazy" src="img/creative_photos_showreel/compress/gold1.jpg" alt="Product photography"></div>
+          <div class="work-meta">
+            <span class="work-tag tag-photo">Photo</span>
+            <h3>Product Photography</h3>
+            <p>Clean, high-craft product and detail shots.</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="work-card" data-cat="photo">
+        <a href="creative/pictures.html">
+          <div class="work-thumb"><img loading="lazy" src="img/creative_photos_showreel/compress/sheikhqatanani.jpeg" alt="Event photography"></div>
+          <div class="work-meta">
+            <span class="work-tag tag-photo">Photo</span>
+            <h3>Events &amp; Talks</h3>
+            <p>Storytelling coverage of speakers, crowds, and moments.</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="work-card" data-cat="photo">
+        <a href="creative/pictures.html">
+          <div class="work-thumb"><img loading="lazy" src="img/creative_photos_showreel/compress/adam_podcast.jpg" alt="Portrait photography"></div>
+          <div class="work-meta">
+            <span class="work-tag tag-photo">Photo</span>
+            <h3>Portraits</h3>
+            <p>Cinematic portraits with character and mood.</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="work-card" data-cat="photo">
+        <a href="creative/pictures.html">
+          <div class="work-thumb"><img loading="lazy" src="img/creative_photos_showreel/compress/camp_fire.jpeg" alt="More photography"></div>
+          <div class="work-meta">
+            <span class="work-tag tag-photo">Photo</span>
+            <h3>Full Photo Gallery</h3>
+            <p>Browse the complete set in the lightbox gallery.</p>
+          </div>
+        </a>
+      </article>
+
+      <!-- ===== VIDEO ===== -->
+      <article class="work-card" data-cat="video">
+        <a href="creative/videos.html">
+          <div class="work-thumb">
+            <img loading="lazy" src="https://img.youtube.com/vi/4FEIlZBXXWQ/hqdefault.jpg" alt="Video edit">
+            <span class="play-badge"><i class="fa fa-play"></i></span>
+          </div>
+          <div class="work-meta">
+            <span class="work-tag tag-video">Video</span>
+            <h3>Story Edit</h3>
+            <p>Narrative-driven edit — pacing, music, and motion.</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="work-card" data-cat="video">
+        <a href="creative/videos.html">
+          <div class="work-thumb">
+            <img loading="lazy" src="https://img.youtube.com/vi/uEhN33LaOvE/hqdefault.jpg" alt="Video edit">
+            <span class="play-badge"><i class="fa fa-play"></i></span>
+          </div>
+          <div class="work-meta">
+            <span class="work-tag tag-video">Video</span>
+            <h3>Highlight Reel</h3>
+            <p>Event highlights cut for energy and emotion.</p>
+          </div>
+        </a>
+      </article>
+
+      <article class="work-card" data-cat="video">
+        <a href="creative/videos.html">
+          <div class="work-thumb">
+            <img loading="lazy" src="https://img.youtube.com/vi/bDSGAFstCxw/hqdefault.jpg" alt="Video edit">
+            <span class="play-badge"><i class="fa fa-play"></i></span>
+          </div>
+          <div class="work-meta">
+            <span class="work-tag tag-video">Video</span>
+            <h3>More Video Edits</h3>
+            <p>See the full set of edits and reels.</p>
+          </div>
+        </a>
+      </article>
 
     </div>
   </div>
+</section>
 
+<!-- ===================== CONTACT ===================== -->
+<section id="contact-me" class="container-fluid bg-brown text-white py-5">
+  <div class="container py-3 text-center">
+    <h2 class="fw-bold mb-3">Let's work together</h2>
+    <p class="hero-sub mx-auto mb-4">
+      Need someone who can build the software <em>and</em> make it look good?
+      I take on engineering, photography, and video work across NJ, NYC, and remote.
+    </p>
+    <a class="btn btn-light btn-lg px-4" href="mailto:baraa2aziz@gmail.com">baraa2aziz@gmail.com</a>
   </div>
+</section>
 
-
-
-
-
-
-   <div id="Projects" class="container-fluid bg-off-white py-5">
-    <div class="container">
-
-    </div>
-
-    <br>
-
-  <!--   <div class="text-center">
-      <a type="button" href="#" class="btn btn-secondary disabled">View More Projects</a>
-    </div>
-   -->
-  </div>
-
-
-
-
-    <div id="contact-me" class="container-fluid bg-brown text-white py-5">
-      <div class="container">
-        <h1>Contact Me</h1>
-        <p>Let’s connect! I’m a passionate videographer and photographer serving NJ, NYC, and beyond. Reach out to collaborate or book your next shoot!</p>
-
-        </p>
-      </div>
-    </div>
-    
-  <footer class="footer mt-auto py-3 bg-nav-brown">
-    <div class="container d-flex justify-content-between align-items-center">
-
-      <span class="text-light">Baraa Nassar © 2025</span>
-
+<!-- ===================== FOOTER ===================== -->
+<footer class="footer mt-auto py-3 bg-nav-brown">
+  <div class="container d-flex justify-content-between align-items-center">
+    <span class="text-light">Baraa Nassar © 2026</span>
     <div class="accordion">
-    <ul>
-      
-      <li>
-        <div> <a href="https://www.linkedin.com/in/baraa2nassar/">
-          <i class="fab fa-linkedin-in fa-2x"></i>
-          <span>Linked-in</span>
-          </a> </div>
-      </li>
-
-      <li>
-        <div> <a href="https://github.com/Baraa2nassar">
-          <i class="fab fa-github fa-2x"></i>
-          <span>GitHub</span>
-          
-          </a> </div>
-      </li>
-      <li>
-        <div> <a href="mailto:baraa2aziz@gmail.com">
-          <i class="fa fa-envelope fa-2x"></i>
-          <span>Email</span>
-          
-          </a> </div>
-      </li>
-
-
-    </ul>
-  </div>
-
-      <span class="text-light">Dumont NJ.</span>
-
+      <ul>
+        <li><div><a href="https://www.linkedin.com/in/baraa2nassar/"><i class="fab fa-linkedin-in fa-2x"></i><span>Linked-in</span></a></div></li>
+        <li><div><a href="https://github.com/Baraa2nassar"><i class="fab fa-github fa-2x"></i><span>GitHub</span></a></div></li>
+        <li><div><a href="mailto:baraa2aziz@gmail.com"><i class="fa fa-envelope fa-2x"></i><span>Email</span></a></div></li>
+      </ul>
     </div>
-  </footer>
+    <span class="text-light">Dumont, NJ</span>
+  </div>
+</footer>
 
+<!-- ===================== SCRIPTS ===================== -->
 <script>
-  // Get the shape elements
-  const shape1 = document.querySelector('#shape1');
-  const shape2 = document.querySelector('#shape2');
-  const shape3 = document.querySelector('#shape3');
-  const shape4 = document.querySelector('#shape4');
+  // Randomize the decorative shapes (kept from the original design)
+  ['#shape1', '#shape2', '#shape3', '#shape4'].forEach(sel => {
+    const el = document.querySelector(sel);
+    if (!el) return;
+    el.style.top = Math.random() * 80 + '%';
+    el.style.left = Math.random() * 80 + '%';
+  });
 
-  // Set the positions of the shapes randomly
-  shape1.style.top = Math.random() * 80 + '%';
-  shape1.style.left = Math.random() * 80 + '%';
+  // Work-grid filter
+  const filterBar = document.getElementById('filterBar');
+  const cards = Array.from(document.querySelectorAll('#workGrid .work-card'));
+  filterBar.addEventListener('click', (e) => {
+    const btn = e.target.closest('.filter-btn');
+    if (!btn) return;
+    const filter = btn.dataset.filter;
 
-  shape2.style.top = Math.random() * 80 + '%';
-  shape2.style.left = Math.random() * 80 + '%';
+    filterBar.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+    btn.classList.add('active');
 
-  shape3.style.top = Math.random() * 80 + '%';
-  shape3.style.left = Math.random() * 80 + '%';
-
-  shape4.style.top = Math.random() * 80 + '%';
-  shape4.style.left = Math.random() * 80 + '%';
-
-</script>
-    <!-- Bootstrap JavaScript -->
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
-    <script
-    type="text/javascript"
-    src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/6.1.0/mdb.min.js"
-  ></script>
-
-  <script>
-    // Add click event listener to project circles
-    const projectCircles = document.querySelectorAll('.project-circle');
-    projectCircles.forEach(circle => {
-      circle.addEventListener('click', () => {
-        // Replace "#" with the link to the project page
-        window.location.href = "#";
-      });
-    });
-  </script>
-
-  <script>
-    function toggleCards() {
-      const btn = document.querySelector(".bread");
-      const cards = document.querySelectorAll(".col");
-
-      // Check if some cards are hidden
-      if (cards[3].classList.contains("hidden-card")) {
-        // Show all cards
-        cards.forEach(card => {
-          card.classList.remove("hidden-card");
-        });
-        btn.textContent = "Show Less Projects";
-      } else {
-        // Hide some cards
-        for (let i = 3; i < cards.length; i++) {
-          cards[i].classList.add("hidden-card");
-        }
-        btn.textContent = "View More Projects";
+    cards.forEach(card => {
+      const show = filter === 'all' || card.dataset.cat === filter;
+      card.classList.toggle('is-hidden', !show);
+      if (show) {
+        // retrigger fade animation
+        card.style.animation = 'none';
+        void card.offsetWidth;
+        card.style.animation = '';
       }
-    }
+    });
+  });
+</script>
 
-  </script>
-
-
-
-  </body>
-  </html>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
