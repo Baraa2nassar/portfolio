@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Baraa Nassar — Photo &amp; Video Studio</title>
+<meta name="description" content="Baraa Nassar — photographer and video editor in Dumont, NJ. Brand content, event coverage, portraits, and short-form video for businesses and communities across NJ, NYC and remote.">
+
+<meta property="og:title" content="Baraa Nassar — Photo & Video Studio">
+<meta property="og:description" content="Brand content, event coverage and reels — shot and edited end to end.">
+<meta property="og:image" content="img/studio/work/full/lake-sunset.jpg">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://baraa2nassar.com/studio.html">
+<link rel="icon" href="img/100pxtab_icon.png" type="image/x-icon">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter+Tight:wght@300;400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#0c0b0a;
+  --bg-2:#131110;
+  --surface:#1a1716;
+  --text:#f2ede6;
+  --muted:#958b82;
+  --line:rgba(242,237,230,.11);
+  --gold:#c9a257;
+  --gold-soft:#dcc08a;
+  --maxw:1280px;
+  --ease:cubic-bezier(.22,.61,.36,1);
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+  background:var(--bg);color:var(--text);
+  font-family:"Inter Tight",system-ui,sans-serif;font-weight:400;line-height:1.6;
+  -webkit-font-smoothing:antialiased;overflow-x:hidden;
+}
+::selection{background:var(--gold);color:var(--bg)}
+h1,h2,h3{font-weight:500;line-height:1.02;letter-spacing:-.035em}
+.accent{color:var(--gold-soft)}
+a{color:inherit;text-decoration:none}
+img,video{display:block;max-width:100%}
+.container{max-width:var(--maxw);margin:0 auto;padding:0 32px}
+
+.eyebrow{font-size:.72rem;letter-spacing:.24em;text-transform:uppercase;color:var(--muted);font-weight:500;display:inline-flex;align-items:center;gap:14px}
+.eyebrow::before{content:"";width:30px;height:1px;background:var(--gold)}
+
+/* ---------- Nav ---------- */
+header.nav{position:fixed;top:0;left:0;right:0;z-index:100;border-bottom:1px solid transparent;transition:background .4s var(--ease),border-color .4s var(--ease)}
+header.nav.scrolled{background:rgba(12,11,10,.78);backdrop-filter:blur(14px) saturate(1.2);border-bottom-color:var(--line)}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:72px}
+.wordmark{font-size:1.08rem;font-weight:600;letter-spacing:-.02em;display:flex;align-items:baseline;gap:10px}
+.wordmark small{font-size:.62rem;font-weight:500;letter-spacing:.26em;text-transform:uppercase;color:var(--muted)}
+.nav-links{display:flex;align-items:center;gap:34px}
+.nav-links a.navlink{font-size:.86rem;color:var(--muted);transition:color .25s}
+.nav-links a.navlink:hover{color:var(--text)}
+.btn{display:inline-flex;align-items:center;gap:8px;font-size:.88rem;font-weight:500;padding:12px 24px;border-radius:100px;transition:all .3s var(--ease);border:1px solid var(--gold);cursor:pointer;font-family:inherit}
+.btn-primary{background:var(--gold);color:#120e08}
+.btn-primary:hover{background:var(--gold-soft);transform:translateY(-2px)}
+.btn-ghost{background:transparent;color:var(--text);border-color:var(--line)}
+.btn-ghost:hover{border-color:var(--gold);color:var(--gold-soft)}
+.nav-toggle{display:none;background:none;border:0;color:var(--text);font-size:1.5rem;cursor:pointer}
+
+/* ---------- Hero ---------- */
+.hero{padding-top:150px;overflow:hidden}
+.hero h1{font-size:clamp(2.8rem,7.6vw,6.6rem);max-width:13ch;margin-top:26px}
+.hero-row{display:flex;justify-content:space-between;align-items:flex-end;gap:40px;flex-wrap:wrap;margin-top:34px}
+.hero .sub{max-width:44ch;color:#d9d0c5;font-size:clamp(1rem,1.4vw,1.18rem)}
+.hero .cta-row{display:flex;gap:14px;flex-wrap:wrap}
+.marquee{margin-top:70px;display:flex;flex-direction:column;gap:14px}
+.m-row{display:flex;gap:14px;width:max-content;animation:scroll 70s linear infinite}
+.m-row.rev{animation-direction:reverse;animation-duration:85s}
+.m-row img{height:clamp(160px,22vw,270px);width:auto;border-radius:6px;object-fit:cover}
+.marquee:hover .m-row{animation-play-state:paused}
+@keyframes scroll{to{transform:translateX(-50%)}}
+
+/* ---------- Credits strip ---------- */
+.credits{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:30px 0;margin-top:90px}
+.credits .container{display:flex;align-items:center;gap:20px 44px;flex-wrap:wrap}
+.credits .lbl{font-size:.72rem;letter-spacing:.2em;text-transform:uppercase;color:var(--muted)}
+.credits .cl{font-size:1.06rem;font-weight:500;color:#cfc6bb;letter-spacing:-.01em}
+
+/* ---------- Sections ---------- */
+section{position:relative}
+.pad{padding:clamp(80px,12vh,140px) 0}
+.sec-head{display:flex;justify-content:space-between;align-items:flex-end;gap:30px 40px;flex-wrap:wrap;margin-bottom:50px}
+.sec-head h2{font-size:clamp(2rem,4.6vw,3.5rem);max-width:15ch;margin-top:18px}
+.sec-head p{max-width:40ch;color:var(--muted)}
+
+/* ---------- Featured (Al Jazeera) ---------- */
+.feature{display:grid;grid-template-columns:1.25fr 1fr;gap:56px;align-items:center}
+.feature-imgs{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.feature-imgs .fi{cursor:pointer;overflow:hidden;border-radius:6px}
+.feature-imgs .fi:first-child{grid-column:span 2}
+.feature-imgs img{width:100%;aspect-ratio:3/2;object-fit:cover;transition:transform .7s var(--ease)}
+.feature-imgs .fi:hover img{transform:scale(1.04)}
+.feature h3{font-size:clamp(1.8rem,3.4vw,2.8rem);margin-top:18px}
+.feature p{color:var(--muted);margin-top:18px;max-width:46ch}
+.feature dl{margin-top:30px;display:grid;grid-template-columns:auto 1fr;gap:10px 26px;font-size:.94rem}
+.feature dt{color:var(--muted)}
+.feature .btn{margin-top:34px}
+
+/* ---------- Reels ---------- */
+.reels-wrap{position:relative}
+.reels{display:flex;align-items:flex-start;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:32px;padding:0 32px 18px;scrollbar-width:thin;scrollbar-color:var(--surface) transparent}
+.reels::-webkit-scrollbar{height:6px}
+.reels::-webkit-scrollbar-thumb{background:var(--surface);border-radius:6px}
+@media(min-width:1344px){.reels{padding-left:calc((100vw - var(--maxw))/2 + 32px);scroll-padding-left:calc((100vw - var(--maxw))/2 + 32px)}}
+.reel{flex:0 0 auto;width:clamp(200px,22vw,270px);scroll-snap-align:start;cursor:pointer}
+.reel.land{width:clamp(320px,40vw,480px)}
+.reel .frame{position:relative;aspect-ratio:9/16;border-radius:8px;overflow:hidden;background:var(--surface)}
+.reel.land .frame{aspect-ratio:16/9}
+.reel .frame img,.reel .frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.reel .frame video{opacity:0;transition:opacity .4s}
+.reel.playing .frame video{opacity:1}
+.reel .badge{position:absolute;left:12px;top:12px;font-size:.66rem;letter-spacing:.14em;text-transform:uppercase;background:rgba(12,11,10,.6);backdrop-filter:blur(6px);padding:5px 10px;border-radius:100px}
+.reel .pbtn{position:absolute;right:12px;bottom:12px;width:40px;height:40px;border-radius:50%;background:rgba(12,11,10,.55);backdrop-filter:blur(6px);display:flex;align-items:center;justify-content:center;transition:background .3s}
+.reel:hover .pbtn{background:var(--gold)}
+.reel .pbtn svg{width:14px;height:14px;fill:#fff;margin-left:2px}
+.reel:hover .pbtn svg{fill:#120e08}
+.reel .rt{margin-top:14px;font-weight:500;letter-spacing:-.01em;line-height:1.3}
+.reel .rk{font-size:.82rem;color:var(--muted);margin-top:4px}
+.reel-nav{display:flex;gap:10px}
+.reel-nav button{width:44px;height:44px;border-radius:50%;background:none;border:1px solid var(--line);color:var(--text);font-size:1.1rem;cursor:pointer;transition:border-color .25s}
+.reel-nav button:hover{border-color:var(--gold)}
+
+/* ---------- Work gallery ---------- */
+.filter-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:34px}
+.fbtn{font-family:inherit;font-size:.86rem;color:var(--muted);background:none;border:1px solid var(--line);padding:8px 18px;border-radius:100px;cursor:pointer;transition:all .25s}
+.fbtn:hover{color:var(--text);border-color:var(--muted)}
+.fbtn.active{background:var(--text);color:var(--bg);border-color:var(--text)}
+.fbtn .n{opacity:.55;margin-left:4px;font-size:.78em}
+.gallery{columns:3;column-gap:14px}
+.g-item{break-inside:avoid;margin-bottom:14px;position:relative;overflow:hidden;border-radius:6px;cursor:pointer;background:var(--surface)}
+.g-item img{width:100%;height:auto;transition:transform .7s var(--ease)}
+.g-item:hover img{transform:scale(1.04)}
+.g-item .cap{position:absolute;left:0;right:0;bottom:0;padding:40px 16px 14px;background:linear-gradient(transparent,rgba(12,11,10,.85));opacity:0;transform:translateY(8px);transition:all .35s var(--ease)}
+.g-item:hover .cap{opacity:1;transform:none}
+.g-item .cap .k{font-size:.68rem;letter-spacing:.18em;text-transform:uppercase;color:var(--gold-soft)}
+.g-item .cap .t{font-weight:500;margin-top:2px}
+.g-item.is-hidden{display:none}
+.more-row{text-align:center;margin-top:30px}
+
+/* ---------- Services ---------- */
+.services{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
+.svc{display:grid;grid-template-columns:80px 1fr auto;gap:30px;align-items:baseline;padding:38px 0;border-top:1px solid var(--line);transition:padding-left .4s var(--ease)}
+.svc:hover{padding-left:14px}
+.svc:last-child{border-bottom:1px solid var(--line)}
+.svc .num{font-size:1rem;color:var(--gold);font-weight:500;font-variant-numeric:tabular-nums}
+.svc h3{font-size:clamp(1.5rem,3vw,2.3rem)}
+.svc .svc-desc{max-width:54ch;color:var(--muted);margin-top:10px}
+.svc .svc-tags{margin-top:16px;display:flex;gap:8px;flex-wrap:wrap}
+.svc .tag{font-size:.76rem;color:var(--muted);border:1px solid var(--line);padding:4px 12px;border-radius:100px}
+.svc .arrow{font-size:1.6rem;color:var(--muted);transition:color .3s,transform .3s var(--ease)}
+.svc:hover .arrow{color:var(--gold);transform:translate(5px,-5px)}
+
+/* ---------- About ---------- */
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px;align-items:center}
+.about-portrait img{width:100%;border-radius:8px}
+.about-body .lead{font-size:clamp(1.5rem,2.6vw,2.1rem);font-weight:500;letter-spacing:-.025em;line-height:1.25;margin-top:18px}
+.about-body p{color:#cfc6bb;margin-top:20px;font-size:1.06rem;max-width:56ch}
+.stats{display:flex;gap:46px;margin-top:40px;flex-wrap:wrap}
+.stat .n{font-size:2.2rem;font-weight:500;letter-spacing:-.03em;color:var(--gold-soft)}
+.stat .l{font-size:.82rem;color:var(--muted)}
+.kit{margin-top:34px;font-size:.88rem;color:var(--muted)}
+.kit b{color:var(--text);font-weight:500}
+
+/* ---------- Contact ---------- */
+.contact{text-align:center;border-top:1px solid var(--line)}
+.contact h2{font-size:clamp(2.4rem,6.6vw,5.4rem);max-width:15ch;margin:22px auto 0}
+.contact .cta-row{margin-top:42px;display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.contact .meta{margin-top:40px;color:var(--muted);font-size:.92rem;display:flex;gap:26px;justify-content:center;flex-wrap:wrap}
+.contact .meta a:hover{color:var(--gold-soft)}
+
+footer.foot{border-top:1px solid var(--line);padding:34px 0}
+.foot-inner{display:flex;justify-content:space-between;align-items:center;gap:20px;flex-wrap:wrap;color:var(--muted);font-size:.86rem}
+.foot-inner a:hover{color:var(--text)}
+
+/* ---------- Lightbox ---------- */
+.lb{position:fixed;inset:0;z-index:1000;background:rgba(8,7,6,.95);backdrop-filter:blur(6px);display:none;align-items:center;justify-content:center;padding:4vh 4vw}
+.lb.open{display:flex}
+.lb-media{position:relative;display:flex;flex-direction:column;align-items:center}
+.lb-media img{max-width:90vw;max-height:84vh;object-fit:contain;border-radius:6px}
+.lb-media video{max-width:90vw;max-height:84vh;border-radius:6px;background:#000}
+.lb-media iframe{width:min(88vw,1000px);aspect-ratio:16/9;border:0;border-radius:6px}
+.lb-cap{margin-top:14px;color:var(--muted);font-size:.9rem;text-align:center;max-width:60ch}
+.lb-close{position:absolute;top:18px;right:24px;background:none;border:0;color:var(--muted);font-size:2rem;cursor:pointer}
+.lb-close:hover,.lb-nav:hover{color:var(--text)}
+.lb-nav{position:absolute;top:50%;transform:translateY(-50%);background:none;border:0;color:var(--muted);font-size:2.4rem;cursor:pointer;padding:20px}
+.lb-prev{left:6px}.lb-next{right:6px}
+
+/* ---------- Reveal ---------- */
+.reveal{opacity:0;transform:translateY(24px);transition:opacity .9s var(--ease),transform .9s var(--ease)}
+.reveal.in{opacity:1;transform:none}
+.reveal.d1{transition-delay:.08s}.reveal.d2{transition-delay:.16s}
+@media (prefers-reduced-motion:reduce){
+  *{animation:none!important;transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+
+/* ---------- Responsive ---------- */
+@media(max-width:900px){
+  .nav-links{position:fixed;inset:72px 0 auto 0;background:rgba(12,11,10,.97);backdrop-filter:blur(14px);flex-direction:column;align-items:flex-start;gap:0;padding:10px 32px 26px;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:transform .45s var(--ease)}
+  .nav-links.open{transform:none}
+  .nav-links a.navlink{padding:15px 0;font-size:1rem;width:100%;border-bottom:1px solid var(--line)}
+  .nav-links .btn{margin-top:18px}
+  .nav-toggle{display:block}
+  .feature,.about-grid{grid-template-columns:1fr;gap:40px}
+  .about-portrait{max-width:420px}
+  .gallery{columns:2}
+  .svc{grid-template-columns:44px 1fr;gap:18px}
+  .svc .arrow{display:none}
+}
+@media(max-width:560px){
+  .container{padding:0 18px}
+  .reels{padding:0 18px 16px;scroll-padding-inline:18px}
+  .hero{padding-top:120px}
+  .gallery{column-gap:10px}
+  .g-item{margin-bottom:10px}
+  .reel-nav{display:none}
+}
+</style>
+</head>
+<body>
+
+<header class="nav" id="nav">
+  <div class="container nav-inner">
+    <a href="#top" class="wordmark">Baraa Nassar <small>Studio</small></a>
+    <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
+    <nav class="nav-links" id="navLinks">
+      <a class="navlink" href="#reels">Reels</a>
+      <a class="navlink" href="#work">Photos</a>
+      <a class="navlink" href="#services">Services</a>
+      <a class="navlink" href="#about">About</a>
+      <a class="btn btn-primary" href="mailto:baraa2aziz@gmail.com?subject=Project%20inquiry">Book a shoot</a>
+    </nav>
+  </div>
+</header>
+
+<!-- ============ HERO ============ -->
+<section class="hero" id="top">
+  <div class="container">
+    <span class="eyebrow reveal">Photographer &amp; video editor · NJ / NYC</span>
+    <h1 class="reveal d1">Photo and video that make people <span class="accent">stop scrolling.</span></h1>
+    <div class="hero-row">
+      <p class="sub reveal d2">Brand content, event coverage, portraits and short-form reels. I shoot and edit everything myself, so you get one consistent look.</p>
+      <div class="cta-row reveal d2">
+        <a class="btn btn-primary" href="mailto:baraa2aziz@gmail.com?subject=Project%20inquiry">Book a shoot</a>
+        <a class="btn btn-ghost" href="#reels">Watch reels</a>
+      </div>
+    </div>
+  </div>
+  <div class="marquee" aria-hidden="true">
+    <div class="m-row" id="mRow1"></div>
+    <div class="m-row rev" id="mRow2"></div>
+  </div>
+</section>
+
+<!-- ============ CREDITS ============ -->
+<div class="credits">
+  <div class="container">
+    <span class="lbl">Worked with</span>
+    <span class="cl">Al Jazeera Documentary</span>
+    <span class="cl">Islamic Relief USA</span>
+    <span class="cl">ICPC NJ</span>
+    <span class="cl">InterMSA</span>
+    <span class="cl">Nassar Gold</span>
+    <span class="cl">Montclair State Robotics</span>
+  </div>
+</div>
+
+<!-- ============ FEATURED ============ -->
+<section class="pad" id="featured">
+  <div class="container feature">
+    <div class="feature-imgs reveal" id="featureImgs">
+      <div class="fi" data-full="img/studio/work/full/aljazeera-rig.jpg" data-cap="On set — camera rig"><img loading="lazy" src="img/studio/work/thumb/aljazeera-rig.jpg" alt="Camera rig on the set of the documentary 800 Meters"></div>
+      <div class="fi" data-full="img/studio/work/full/aljazeera-monitor.jpg" data-cap="Monitor check"><img loading="lazy" src="img/studio/work/thumb/aljazeera-monitor.jpg" alt="Camera monitor on set"></div>
+      <div class="fi" data-full="img/studio/work/full/aljazeera-set.jpg" data-cap="Behind the scenes"><img loading="lazy" src="img/studio/work/thumb/aljazeera-set.jpg" alt="Behind the scenes on set"></div>
+    </div>
+    <div class="reveal d1">
+      <span class="eyebrow">Featured credit</span>
+      <h3>“800 Meters” — a documentary for Al Jazeera</h3>
+      <p>Aired on Al Jazeera Documentary and now streaming on YouTube. I was second assistant camera and shot the behind-the-scenes coverage.</p>
+      <dl>
+        <dt>Role</dt><dd>2nd Assistant Camera · BTS</dd>
+        <dt>Director</dt><dd>Anas Tolba</dd>
+        <dt>Network</dt><dd>Al Jazeera Documentary</dd>
+      </dl>
+      <a class="btn btn-ghost" href="https://www.instagram.com/p/Cx6PDUbAxzn/" target="_blank" rel="noopener">See the BTS post ↗</a>
+    </div>
+  </div>
+</section>
+
+<!-- ============ REELS ============ -->
+<section class="pad" id="reels" style="padding-top:0">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow reveal">Video</span>
+        <h2 class="reveal d1">Reels &amp; <span class="accent">short films</span></h2>
+      </div>
+      <div class="reel-nav reveal d1">
+        <button id="reelPrev" aria-label="Scroll reels left">←</button>
+        <button id="reelNext" aria-label="Scroll reels right">→</button>
+      </div>
+    </div>
+  </div>
+  <div class="reels-wrap reveal">
+    <div class="reels" id="reels-track"></div>
+  </div>
+</section>
+
+<!-- ============ PHOTOS ============ -->
+<section class="pad" id="work" style="padding-top:0">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow reveal">Photography</span>
+        <h2 class="reveal d1">Selected <span class="accent">photos</span></h2>
+      </div>
+      <p class="reveal d1">Brand shoots, events, community and portraits. Click any photo to see it full size.</p>
+    </div>
+    <div class="filter-row reveal" id="filterRow"></div>
+    <div class="gallery" id="gallery"></div>
+    <div class="more-row"><button class="btn btn-ghost" id="moreBtn">Show more photos</button></div>
+  </div>
+</section>
+
+<!-- ============ SERVICES ============ -->
+<section class="services pad" id="services">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow reveal">Services</span>
+        <h2 class="reveal d1">What I make for <span class="accent">you</span></h2>
+      </div>
+      <p class="reveal d1">One person behind the camera and in the edit. Faster turnaround, one consistent style.</p>
+    </div>
+
+    <div class="svc reveal">
+      <div class="num">01</div>
+      <div>
+        <h3>Brand &amp; product content</h3>
+        <p class="svc-desc">Product, storefront and lifestyle photography for launches, campaigns and your feed. One shoot gives you a month of content.</p>
+        <div class="svc-tags"><span class="tag">Product</span><span class="tag">Storefront</span><span class="tag">Campaigns</span><span class="tag">Social</span></div>
+      </div>
+      <div class="arrow">↗</div>
+    </div>
+    <div class="svc reveal">
+      <div class="num">02</div>
+      <div>
+        <h3>Reels &amp; short-form video</h3>
+        <p class="svc-desc">Promos, recaps and short films cut for the way people watch on social: a strong hook, tight pacing and clean sound. Filmed on Sony A7 and edited in DaVinci Resolve.</p>
+        <div class="svc-tags"><span class="tag">Reels</span><span class="tag">Promos</span><span class="tag">Short film</span><span class="tag">Editing</span></div>
+      </div>
+      <div class="arrow">↗</div>
+    </div>
+    <div class="svc reveal">
+      <div class="num">03</div>
+      <div>
+        <h3>Events &amp; community</h3>
+        <p class="svc-desc">Camps, conferences, launches and nonprofit programs, covered in photos and a recap video you can share the same week.</p>
+        <div class="svc-tags"><span class="tag">Event coverage</span><span class="tag">Recap video</span><span class="tag">Nonprofits</span></div>
+      </div>
+      <div class="arrow">↗</div>
+    </div>
+    <div class="svc reveal">
+      <div class="num">04</div>
+      <div>
+        <h3>Portraits &amp; BTS</h3>
+        <p class="svc-desc">Headshots, creator portraits and behind-the-scenes photos for film and production sets.</p>
+        <div class="svc-tags"><span class="tag">Portraits</span><span class="tag">Headshots</span><span class="tag">On-set BTS</span></div>
+      </div>
+      <div class="arrow">↗</div>
+    </div>
+  </div>
+</section>
+
+<!-- ============ ABOUT ============ -->
+<section class="pad" id="about">
+  <div class="container about-grid">
+    <div class="about-portrait reveal">
+      <img src="img/studio/about/portrait.jpg" alt="Baraa Nassar">
+    </div>
+    <div class="about-body reveal d1">
+      <span class="eyebrow">About</span>
+      <p class="lead">I'm Baraa. I turn products, people and moments into content that feels real, not staged.</p>
+      <p>I'm a photographer and video editor based in Dumont, NJ, working across NYC and remotely. I've worked on an Al Jazeera documentary set, covered youth camps for hundreds of people, and made promos for nonprofits and local brands.</p>
+      <p>I shoot the stills, cut the video and deliver a library you can post right away, all with one consistent look.</p>
+      <div class="stats">
+        <div class="stat"><div class="n">6+ yrs</div><div class="l">Shooting &amp; editing</div></div>
+        <div class="stat"><div class="n">NJ · NYC</div><div class="l">&amp; remote</div></div>
+        <div class="stat"><div class="n">24h</div><div class="l">Reply time</div></div>
+      </div>
+      <p class="kit"><b>Kit</b> — Sony A7 · Lumix G7 · 25mm f/1.7 · 35mm f/1.4 · DaVinci Resolve · Lightroom · Photoshop</p>
+    </div>
+  </div>
+</section>
+
+<!-- ============ CONTACT ============ -->
+<section class="pad contact" id="contact">
+  <div class="container">
+    <span class="eyebrow">Let's work together</span>
+    <h2 class="reveal">Let's make something your brand is <span class="accent">proud of.</span></h2>
+    <div class="cta-row reveal d1">
+      <a class="btn btn-primary" href="mailto:baraa2aziz@gmail.com?subject=Project%20inquiry">Book a shoot</a>
+      <a class="btn btn-ghost" href="https://www.instagram.com/baraa2nassar/" target="_blank" rel="noopener">Follow on Instagram ↗</a>
+    </div>
+    <div class="meta">
+      <a href="mailto:baraa2aziz@gmail.com">baraa2aziz@gmail.com</a>
+      <span>Dumont, NJ · NYC metro &amp; remote</span>
+      <a href="https://www.instagram.com/baraa2nassar/" target="_blank" rel="noopener">@baraa2nassar</a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="container foot-inner">
+    <span>© 2026 Baraa Nassar Studio</span>
+    <div style="display:flex;gap:24px">
+      <a href="https://www.instagram.com/baraa2nassar/" target="_blank" rel="noopener">Instagram</a>
+      <a href="mailto:baraa2aziz@gmail.com">Email</a>
+      <a href="index.html">Dev portfolio</a>
+    </div>
+  </div>
+</footer>
+
+<div class="lb" id="lb" aria-hidden="true">
+  <button class="lb-close" id="lbClose" aria-label="Close">×</button>
+  <button class="lb-nav lb-prev" id="lbPrev" aria-label="Previous">‹</button>
+  <button class="lb-nav lb-next" id="lbNext" aria-label="Next">›</button>
+  <div class="lb-media" id="lbMedia"></div>
+</div>
+
+<script>
+/* ---------- Content ---------- */
+const W='img/studio/work/', R='img/studio/reels/', G='img/creative_photos_showreel/';
+// [thumb, full, category, kicker, title]
+const PHOTOS=[
+  [W+'thumb/lake-sunset.jpg',W+'full/lake-sunset.jpg','events','ICPC Camp','Last light on the lake'],
+  [G+'compress/gold1.jpg',G+'gold1.jpg','brand','Product · Nassar Gold','Fine jewelry, lit for luxury'],
+  [W+'thumb/veiled-storefront.jpg',W+'full/veiled-storefront.jpg','brand','Brand · Storefront','Veiled, opening night'],
+  [W+'thumb/portrait-scarf.jpg',W+'full/portrait-scarf.jpg','portraits','Portrait','Autumn portrait'],
+  [W+'thumb/camp23-huddle.jpg',W+'full/camp23-huddle.jpg','events','ICPC Camp 2023','The huddle'],
+  [W+'thumb/intermsa-01.jpg',W+'full/intermsa-01.jpg','brand','Campaign · InterMSA','Event shirt campaign'],
+  [W+'thumb/speaker.jpg',W+'full/speaker.jpg','events','Event','Full room'],
+  [W+'thumb/above-clouds.jpg',W+'full/above-clouds.jpg','portraits','Landscape','Above the clouds'],
+  [W+'thumb/aljazeera-800m.jpg',W+'full/aljazeera-800m.jpg','film','Al Jazeera · 800 Meters','Documentary set'],
+  [W+'thumb/table-laughs.jpg',W+'full/table-laughs.jpg','events','Community','Candid'],
+  [G+'compress/gold3.jpg',G+'gold3.jpg','brand','Product · Nassar Gold','Detail & texture'],
+  [W+'thumb/camp22-fire.jpg',W+'full/camp22-fire.jpg','events','ICPC Camp 2022','Fireside'],
+  [W+'thumb/ummah-professionals.jpg',W+'full/ummah-professionals.jpg','brand','Event · Ummah Professionals','Brand in the room'],
+  [W+'thumb/fireworks.jpg',W+'full/fireworks.jpg','portraits','Blue hour','Far away'],
+  [W+'thumb/camp21-thumbs.jpg',W+'full/camp21-thumbs.jpg','events','Camp 2021','Good energy'],
+  [W+'thumb/portrait-sky.jpg',W+'full/portrait-sky.jpg','portraits','Portrait','Looking up'],
+  [W+'thumb/aljazeera-rig.jpg',W+'full/aljazeera-rig.jpg','film','Al Jazeera · 800 Meters','Rigging up'],
+  [W+'thumb/camp23-lake.jpg',W+'full/camp23-lake.jpg','events','ICPC Camp 2023','Into the lake'],
+  [W+'thumb/giant-chair.jpg',W+'full/giant-chair.jpg','events','ICPC Camp 2022','The giant chair'],
+  [G+'compress/gold2.jpg',G+'gold2.jpg','brand','Product · Nassar Gold','Hero shot'],
+  [W+'thumb/soccer.jpg',W+'full/soccer.jpg','portraits','Portrait','Pause'],
+  [W+'thumb/bonfire-stars.jpg',W+'full/bonfire-stars.jpg','events','Camp','Sparks and stars'],
+  [W+'thumb/intermsa-02.jpg',W+'full/intermsa-02.jpg','brand','Campaign · InterMSA','Fall collection'],
+  [W+'thumb/camp-smile.jpg',W+'full/camp-smile.jpg','events','ICPC Camp','Between sessions'],
+  [W+'thumb/aljazeera-monitor.jpg',W+'full/aljazeera-monitor.jpg','film','Al Jazeera · 800 Meters','Monitor check'],
+  [W+'thumb/conversation.jpg',W+'full/conversation.jpg','events','Community','Conversation'],
+  [W+'thumb/ferris-wheel.jpg',W+'full/ferris-wheel.jpg','portraits','Portrait','City lights'],
+  [W+'thumb/camp21-burger.jpg',W+'full/camp21-burger.jpg','events','Camp 2021','Lunch break'],
+  [W+'thumb/baraa-print.jpg',W+'full/baraa-print.jpg','brand','Product','Golden hour detail'],
+  [W+'thumb/camp23-group.jpg',W+'full/camp23-group.jpg','events','ICPC Camp 2023','Group shot'],
+  [W+'thumb/snow-lamp.jpg',W+'full/snow-lamp.jpg','portraits','Night','Under the lamp'],
+  [W+'thumb/lakeside.jpg',W+'full/lakeside.jpg','portraits','Portrait','Lakeside'],
+  [W+'thumb/camp22-window.jpg',W+'full/camp22-window.jpg','events','ICPC Camp 2022','Through the window'],
+  [W+'thumb/aljazeera-set.jpg',W+'full/aljazeera-set.jpg','film','Al Jazeera · 800 Meters','Behind the scenes'],
+  [G+'compress/gold4.jpg',G+'gold4.jpg','brand','Product · Nassar Gold','Catalog frame'],
+  [W+'thumb/camp21-run.jpg',W+'full/camp21-run.jpg','events','Camp 2021','Sprint'],
+  [W+'thumb/woods.jpg',W+'full/woods.jpg','portraits','Portrait','In the woods'],
+  [W+'thumb/camp21-duo.jpg',W+'full/camp21-duo.jpg','events','Camp 2021','Counselors'],
+  [W+'thumb/somehow-somewhere.jpg',W+'full/somehow-somewhere.jpg','portraits','Landscape','Somehow, somewhere'],
+  [W+'thumb/camp22-arrival.jpg',W+'full/camp22-arrival.jpg','events','ICPC Camp 2022','Arrival day'],
+  [W+'thumb/camp-grass.jpg',W+'full/camp-grass.jpg','events','Camp','Details'],
+];
+const CATS=[['all','All'],['brand','Brand & product'],['events','Events & community'],['portraits','Portraits & landscape'],['film','Film BTS']];
+// [file, kicker, title, landscape?]
+const REELS=[
+  ['ramadan-icpc','Promo · ICPC NJ','If Ramadan was a person'],
+  ['camp-2024','Event recap','Camp 2024 moments'],
+  ['spamming-timeline','Short film · Director & editor','Spamming Timeline'],
+  ['dabka-islamic-relief','Intro · Islamic Relief USA','Dabka, online',true],
+  ['something-to-tell','Cinematic · Sony A7','Something I want to tell you'],
+  ['intermsa','Promo · InterMSA','We don’t follow the algorithm'],
+  ['essential','Cinematic edit','What is essential is invisible'],
+  ['eid','Story','Eid, through a kid’s eyes'],
+  ['summer-23','Cinematic edit','Summer ’23'],
+  ['timeline-breakdown','Editing breakdown','Three days, one video'],
+  ['cameras','Short','Not all cameras are equal'],
+];
+
+/* ---------- Build: marquee ---------- */
+const pick=['lake-sunset','veiled-storefront','camp23-huddle','portrait-scarf','intermsa-01','fireworks','aljazeera-rig','speaker','camp22-fire','above-clouds','ummah-professionals','giant-chair','soccer','camp21-thumbs'];
+const half=Math.ceil(pick.length/2);
+[[pick.slice(0,half),'mRow1'],[pick.slice(half),'mRow2']].forEach(([list,id])=>{
+  const html=list.map(n=>`<img src="${W}thumb/${n}.jpg" alt="" loading="lazy">`).join('');
+  document.getElementById(id).innerHTML=html+html; // doubled for seamless loop
+});
+
+/* ---------- Build: reels ---------- */
+const track=document.getElementById('reels-track');
+track.innerHTML=REELS.map(([f,k,t,land])=>`
+  <div class="reel${land?' land':''}" data-video="${R}${f}.mp4" data-cap="${t}">
+    <div class="frame">
+      <img loading="lazy" src="${R}${f}.jpg" alt="${t}">
+      <video muted loop playsinline preload="none" src="${R}${f}.mp4"></video>
+      <span class="badge">Reel</span>
+      <span class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
+    </div>
+    <div class="rt">${t}</div><div class="rk">${k}</div>
+  </div>`).join('');
+const reelEls=[...track.querySelectorAll('.reel')];
+const canHover=matchMedia('(hover:hover)').matches;
+reelEls.forEach(r=>{
+  const v=r.querySelector('video');
+  if(canHover){
+    r.addEventListener('mouseenter',()=>{v.play().then(()=>r.classList.add('playing')).catch(()=>{})});
+    r.addEventListener('mouseleave',()=>{v.pause();r.classList.remove('playing')});
+  }
+});
+document.getElementById('reelPrev').onclick=()=>track.scrollBy({left:-track.clientWidth*.8,behavior:'smooth'});
+document.getElementById('reelNext').onclick=()=>track.scrollBy({left:track.clientWidth*.8,behavior:'smooth'});
+
+/* ---------- Build: gallery ---------- */
+const gallery=document.getElementById('gallery');
+gallery.innerHTML=PHOTOS.map(([th,full,cat,k,t])=>`
+  <div class="g-item" data-cat="${cat}" data-full="${full}" data-cap="${k} — ${t}">
+    <img loading="lazy" src="${th}" alt="${t}">
+    <div class="cap"><div class="k">${k}</div><div class="t">${t}</div></div>
+  </div>`).join('');
+const items=[...gallery.querySelectorAll('.g-item')];
+const filterRow=document.getElementById('filterRow');
+filterRow.innerHTML=CATS.map(([v,l],i)=>{
+  const n=v==='all'?items.length:items.filter(x=>x.dataset.cat===v).length;
+  return `<button class="fbtn${i?'':' active'}" data-filter="${v}">${l}<span class="n">${n}</span></button>`;
+}).join('');
+const LIMIT=18; let filter='all', expanded=false;
+const moreBtn=document.getElementById('moreBtn');
+function applyFilter(){
+  const match=items.filter(it=>filter==='all'||it.dataset.cat===filter);
+  items.forEach(it=>it.classList.add('is-hidden'));
+  match.forEach((it,i)=>{if(expanded||i<LIMIT)it.classList.remove('is-hidden')});
+  moreBtn.parentElement.style.display=(!expanded&&match.length>LIMIT)?'':'none';
+}
+filterRow.addEventListener('click',e=>{
+  const b=e.target.closest('.fbtn');if(!b)return;
+  filterRow.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('active'));
+  b.classList.add('active');filter=b.dataset.filter;expanded=false;applyFilter();
+});
+moreBtn.onclick=()=>{expanded=true;applyFilter()};
+applyFilter();
+
+/* ---------- Nav ---------- */
+const nav=document.getElementById('nav');
+const onScroll=()=>nav.classList.toggle('scrolled',scrollY>40);
+onScroll();addEventListener('scroll',onScroll,{passive:true});
+const links=document.getElementById('navLinks');
+document.getElementById('navToggle').onclick=()=>links.classList.toggle('open');
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>links.classList.remove('open')));
+
+/* ---------- Reveal ---------- */
+const io=new IntersectionObserver(es=>es.forEach(e=>{if(e.isIntersecting){e.target.classList.add('in');io.unobserve(e.target)}}),{threshold:.1,rootMargin:'0px 0px -6% 0px'});
+document.querySelectorAll('.reveal').forEach(el=>io.observe(el));
+
+/* ---------- Lightbox ---------- */
+const lb=document.getElementById('lb'),lbMedia=document.getElementById('lbMedia');
+let list=[],idx=0;
+function render(){
+  const it=list[idx],cap=`<div class="lb-cap">${it.dataset.cap||''}</div>`;
+  lbMedia.innerHTML=it.dataset.video
+    ?`<video src="${it.dataset.video}" controls autoplay playsinline></video>`+cap
+    :`<img src="${it.dataset.full}" alt="">`+cap;
+}
+function open(group,it){
+  list=group;idx=list.indexOf(it);render();
+  lb.classList.add('open');lb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
+  reelEls.forEach(r=>{r.querySelector('video').pause();r.classList.remove('playing')});
+}
+function close(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');lbMedia.innerHTML='';document.body.style.overflow=''}
+function step(d){idx=(idx+d+list.length)%list.length;render()}
+items.forEach(it=>it.addEventListener('click',()=>open(items.filter(x=>!x.classList.contains('is-hidden')),it)));
+reelEls.forEach(r=>r.addEventListener('click',()=>open(reelEls,r)));
+const fis=[...document.querySelectorAll('#featureImgs .fi')];
+fis.forEach(f=>f.addEventListener('click',()=>open(fis,f)));
+document.getElementById('lbClose').onclick=close;
+document.getElementById('lbPrev').onclick=e=>{e.stopPropagation();step(-1)};
+document.getElementById('lbNext').onclick=e=>{e.stopPropagation();step(1)};
+lb.addEventListener('click',e=>{if(e.target===lb)close()});
+addEventListener('keydown',e=>{
+  if(!lb.classList.contains('open'))return;
+  if(e.key==='Escape')close();else if(e.key==='ArrowRight')step(1);else if(e.key==='ArrowLeft')step(-1);
+});
+</script>
+</body>
+</html>
