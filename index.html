@@ -130,6 +130,11 @@ section{position:relative}
 .reel .rt{margin-top:14px;font-weight:500;letter-spacing:-.01em;line-height:1.3}
 .reel .rk{font-size:.82rem;color:var(--muted);margin-top:4px}
 .reel-nav{display:flex;gap:10px}
+.case-stats{display:flex;gap:18px 56px;flex-wrap:wrap;margin:-10px 0 44px}
+.case-stats .n{font-size:clamp(2rem,4vw,3rem);font-weight:500;letter-spacing:-.04em;color:var(--gold-soft);line-height:1.1}
+.case-stats .l{font-size:.86rem;color:var(--muted);margin-top:4px}
+.reel .likes{position:absolute;left:12px;bottom:12px;font-size:.78rem;font-weight:500;background:rgba(12,11,10,.6);backdrop-filter:blur(6px);padding:5px 10px;border-radius:100px}
+.case-cta{margin-top:26px}
 .reel-nav button{width:44px;height:44px;border-radius:50%;background:none;border:1px solid var(--line);color:var(--text);font-size:1.1rem;cursor:pointer;transition:border-color .25s}
 .reel-nav button:hover{border-color:var(--gold)}
 
@@ -273,6 +278,7 @@ footer.foot{border-top:1px solid var(--line);padding:34px 0}
     <span class="cl">Islamic Relief USA</span>
     <span class="cl">ICPC NJ</span>
     <span class="cl">InterMSA</span>
+    <span class="cl">Royal Jewelry</span>
     <span class="cl">Nassar Gold</span>
     <span class="cl">Montclair State Robotics</span>
   </div>
@@ -297,6 +303,30 @@ footer.foot{border-top:1px solid var(--line);padding:34px 0}
       </dl>
       <a class="btn btn-ghost" href="https://www.youtube.com/watch?v=HBHJiF96ZOs" target="_blank" rel="noopener">Watch on YouTube ↗</a>
     </div>
+  </div>
+</section>
+
+<!-- ============ CASE STUDY: ROYAL JEWELRY ============ -->
+<section class="pad" id="royal" style="padding-top:0">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow reveal">Case study · Social media</span>
+        <h2 class="reveal d1">Royal Jewelry: <span class="accent">reels that sell gold</span></h2>
+      </div>
+      <p class="reveal d1">I run the Instagram for Royal Jewelry, a 21k gold jeweler in Paterson, NJ. Every week I film, edit and post product reels shot right at the counter.</p>
+    </div>
+    <div class="case-stats reveal">
+      <div><div class="n">109K</div><div class="l">likes on a single reel</div></div>
+      <div><div class="n">60+</div><div class="l">reels in six weeks</div></div>
+      <div><div class="n">6</div><div class="l">reels past 3,000 likes</div></div>
+    </div>
+  </div>
+  <div class="reels-wrap reveal">
+    <div class="reels" id="royal-track"></div>
+  </div>
+  <div class="container case-cta reveal">
+    <a class="btn btn-ghost" href="https://www.instagram.com/royalnjewelry1/" target="_blank" rel="noopener">See @royalnjewelry1 ↗</a>
   </div>
 </section>
 
@@ -375,6 +405,15 @@ footer.foot{border-top:1px solid var(--line);padding:34px 0}
     </div>
     <div class="svc reveal">
       <div class="num">04</div>
+      <div>
+        <h3>Social media management</h3>
+        <p class="svc-desc">I plan, film, edit and post content for your account every week, so your feed keeps moving and your products keep selling.</p>
+        <div class="svc-tags"><span class="tag">Weekly reels</span><span class="tag">Posting</span><span class="tag">Captions</span><span class="tag">Growth</span></div>
+      </div>
+      <div class="arrow">↗</div>
+    </div>
+    <div class="svc reveal">
+      <div class="num">05</div>
       <div>
         <h3>Portraits &amp; BTS</h3>
         <p class="svc-desc">Headshots, creator portraits and behind-the-scenes photos for film and production sets.</p>
@@ -534,21 +573,36 @@ const half=Math.ceil(pick.length/2);
   document.getElementById(id).innerHTML=html+html; // doubled for seamless loop
 });
 
+// [file, kicker, title, likes]
+const ROYAL=[
+  ['royal-flower-layers','Royal Jewelry','Flower layers','109K likes'],
+  ['royal-new-in-stock','Royal Jewelry','New in stock','32K likes'],
+  ['royal-bangles','Royal Jewelry','Luxury meets durability','7.5K likes'],
+  ['royal-coin-bracelets','Royal Jewelry','Coin bracelets','4.5K likes'],
+  ['royal-rose-bracelets','Royal Jewelry','Rose bracelets','3.2K likes'],
+  ['royal-paterson','Royal Jewelry','The Paterson store','708 likes'],
+];
+
 /* ---------- Build: reels ---------- */
-const track=document.getElementById('reels-track');
-track.innerHTML=REELS.map(([f,k,t,land])=>`
+const reelCard=([f,k,t,land,likes])=>`
   <div class="reel${land?' land':''}" data-video="${R}${f}.mp4" data-cap="${t}">
     <div class="frame">
       <img loading="lazy" src="${R}${f}.jpg" alt="${t}">
       <video muted loop playsinline preload="none" src="${R}${f}.mp4"></video>
       <span class="badge">Reel</span>
+      ${likes?`<span class="likes">♥ ${likes}</span>`:''}
       <span class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
     </div>
     <div class="rt">${t}</div><div class="rk">${k}</div>
-  </div>`).join('');
+  </div>`;
+const track=document.getElementById('reels-track');
+track.innerHTML=REELS.map(reelCard).join('');
+const royalTrack=document.getElementById('royal-track');
+royalTrack.innerHTML=ROYAL.map(([f,k,t,likes])=>reelCard([f,k,t,false,likes])).join('');
 const reelEls=[...track.querySelectorAll('.reel')];
+const royalEls=[...royalTrack.querySelectorAll('.reel')];
 const canHover=matchMedia('(hover:hover)').matches;
-reelEls.forEach(r=>{
+[...reelEls,...royalEls].forEach(r=>{
   const v=r.querySelector('video');
   if(canHover){
     r.addEventListener('mouseenter',()=>{v.play().then(()=>r.classList.add('playing')).catch(()=>{})});
@@ -613,12 +667,13 @@ function render(){
 function open(group,it){
   list=group;idx=list.indexOf(it);render();
   lb.classList.add('open');lb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
-  reelEls.forEach(r=>{r.querySelector('video').pause();r.classList.remove('playing')});
+  [...reelEls,...royalEls].forEach(r=>{r.querySelector('video').pause();r.classList.remove('playing')});
 }
 function close(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');lbMedia.innerHTML='';document.body.style.overflow=''}
 function step(d){idx=(idx+d+list.length)%list.length;render()}
 items.forEach(it=>it.addEventListener('click',()=>open(items.filter(x=>!x.classList.contains('is-hidden')),it)));
 reelEls.forEach(r=>r.addEventListener('click',()=>open(reelEls,r)));
+royalEls.forEach(r=>r.addEventListener('click',()=>open(royalEls,r)));
 const fis=[...document.querySelectorAll('#featureImgs .fi')];
 fis.forEach(f=>f.addEventListener('click',()=>open(fis,f)));
 document.getElementById('lbClose').onclick=close;
