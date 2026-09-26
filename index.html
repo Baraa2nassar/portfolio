@@ -111,12 +111,10 @@ section{position:relative}
 
 /* ---------- Reels ---------- */
 .reels-wrap{position:relative}
-.reels{display:flex;align-items:flex-start;gap:16px;overflow-x:auto;scroll-snap-type:x mandatory;scroll-padding-inline:32px;padding:0 32px 18px;scrollbar-width:thin;scrollbar-color:var(--surface) transparent}
-.reels::-webkit-scrollbar{height:6px}
-.reels::-webkit-scrollbar-thumb{background:var(--surface);border-radius:6px}
-@media(min-width:1344px){.reels{padding-left:calc((100vw - var(--maxw))/2 + 32px);scroll-padding-left:calc((100vw - var(--maxw))/2 + 32px)}}
-.reel{flex:0 0 auto;width:clamp(200px,22vw,270px);scroll-snap-align:start;cursor:pointer}
-.reel.land{width:clamp(320px,40vw,480px)}
+.reels{display:grid;grid-template-columns:repeat(4,1fr);gap:28px 16px;align-items:start}
+.reel{cursor:pointer;min-width:0}
+.reel.land{grid-column:span 2}
+.reel.is-hidden{display:none}
 .reel .frame{position:relative;aspect-ratio:9/16;border-radius:8px;overflow:hidden;background:var(--surface)}
 .reel.land .frame{aspect-ratio:16/9}
 .reel .frame img,.reel .frame video{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
@@ -129,14 +127,13 @@ section{position:relative}
 .reel:hover .pbtn svg{fill:#120e08}
 .reel .rt{margin-top:14px;font-weight:500;letter-spacing:-.01em;line-height:1.3}
 .reel .rk{font-size:.82rem;color:var(--muted);margin-top:4px}
-.reel-nav{display:flex;gap:10px}
-.case-stats{display:flex;gap:18px 56px;flex-wrap:wrap;margin:-10px 0 44px}
-.case-stats .n{font-size:clamp(2rem,4vw,3rem);font-weight:500;letter-spacing:-.04em;color:var(--gold-soft);line-height:1.1}
-.case-stats .l{font-size:.86rem;color:var(--muted);margin-top:4px}
+.case{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+.case .reels{grid-template-columns:1fr 1fr}
+.case h2{font-size:clamp(1.8rem,3.6vw,2.8rem);margin-top:18px;max-width:14ch}
+.case p{color:var(--muted);margin-top:18px;max-width:44ch}
 .reel .likes{position:absolute;left:12px;bottom:12px;font-size:.78rem;font-weight:500;background:rgba(12,11,10,.6);backdrop-filter:blur(6px);padding:5px 10px;border-radius:100px}
-.case-cta{margin-top:26px}
-.reel-nav button{width:44px;height:44px;border-radius:50%;background:none;border:1px solid var(--line);color:var(--text);font-size:1.1rem;cursor:pointer;transition:border-color .25s}
-.reel-nav button:hover{border-color:var(--gold)}
+.case .btn{margin-top:30px}
+
 
 /* ---------- Work gallery ---------- */
 .filter-row{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:34px}
@@ -214,6 +211,8 @@ footer.foot{border-top:1px solid var(--line);padding:34px 0}
 
 /* ---------- Responsive ---------- */
 @media(max-width:900px){
+  .reels{grid-template-columns:repeat(2,1fr)}
+  .case{grid-template-columns:1fr;gap:34px}
   .nav-links{position:fixed;inset:72px 0 auto 0;background:rgba(12,11,10,.97);backdrop-filter:blur(14px);flex-direction:column;align-items:flex-start;gap:0;padding:10px 32px 26px;border-bottom:1px solid var(--line);transform:translateY(-130%);transition:transform .45s var(--ease)}
   .nav-links.open{transform:none}
   .nav-links a.navlink{padding:15px 0;font-size:1rem;width:100%;border-bottom:1px solid var(--line)}
@@ -227,11 +226,10 @@ footer.foot{border-top:1px solid var(--line);padding:34px 0}
 }
 @media(max-width:560px){
   .container{padding:0 18px}
-  .reels{padding:0 18px 16px;scroll-padding-inline:18px}
+  .reels{gap:22px 10px}
   .hero{padding-top:120px}
   .gallery{column-gap:10px}
   .g-item{margin-bottom:10px}
-  .reel-nav{display:none}
 }
 </style>
 </head>
@@ -306,27 +304,16 @@ footer.foot{border-top:1px solid var(--line);padding:34px 0}
   </div>
 </section>
 
-<!-- ============ CASE STUDY: ROYAL JEWELRY ============ -->
+<!-- ============ ROYAL JEWELRY ============ -->
 <section class="pad" id="royal" style="padding-top:0">
-  <div class="container">
-    <div class="sec-head">
-      <div>
-        <span class="eyebrow reveal">Case study · Social media</span>
-        <h2 class="reveal d1">Royal Jewelry: <span class="accent">reels that sell gold</span></h2>
-      </div>
-      <p class="reveal d1">I run the Instagram for Royal Jewelry, a 21k gold jeweler in Paterson, NJ. Every week I film, edit and post product reels shot right at the counter.</p>
+  <div class="container case">
+    <div class="reveal">
+      <span class="eyebrow">Product video</span>
+      <h2>Royal Jewelry — <span class="accent">21k gold, on camera</span></h2>
+      <p>Product reels for Royal Jewelry, a gold jeweler in Paterson, NJ. Shot at the counter and cut short, so the pieces sell themselves. The top two reached 109K and 32K likes.</p>
+      <a class="btn btn-ghost" href="https://www.instagram.com/royalnjewelry1/" target="_blank" rel="noopener">See @royalnjewelry1 ↗</a>
     </div>
-    <div class="case-stats reveal">
-      <div><div class="n">109K</div><div class="l">likes on a single reel</div></div>
-      <div><div class="n">60+</div><div class="l">reels in six weeks</div></div>
-      <div><div class="n">6</div><div class="l">reels past 3,000 likes</div></div>
-    </div>
-  </div>
-  <div class="reels-wrap reveal">
-    <div class="reels" id="royal-track"></div>
-  </div>
-  <div class="container case-cta reveal">
-    <a class="btn btn-ghost" href="https://www.instagram.com/royalnjewelry1/" target="_blank" rel="noopener">See @royalnjewelry1 ↗</a>
+    <div class="reels reveal d1" id="royal-track"></div>
   </div>
 </section>
 
@@ -338,14 +325,11 @@ footer.foot{border-top:1px solid var(--line);padding:34px 0}
         <span class="eyebrow reveal">Video</span>
         <h2 class="reveal d1">Reels &amp; <span class="accent">short films</span></h2>
       </div>
-      <div class="reel-nav reveal d1">
-        <button id="reelPrev" aria-label="Scroll reels left">←</button>
-        <button id="reelNext" aria-label="Scroll reels right">→</button>
-      </div>
     </div>
   </div>
-  <div class="reels-wrap reveal">
-    <div class="reels" id="reels-track"></div>
+  <div class="container">
+    <div class="reels reveal" id="reels-track"></div>
+    <div class="more-row" id="reelMoreRow"><button class="btn btn-ghost" id="reelMore">Show more reels</button></div>
   </div>
 </section>
 
@@ -405,15 +389,6 @@ footer.foot{border-top:1px solid var(--line);padding:34px 0}
     </div>
     <div class="svc reveal">
       <div class="num">04</div>
-      <div>
-        <h3>Social media management</h3>
-        <p class="svc-desc">I plan, film, edit and post content for your account every week, so your feed keeps moving and your products keep selling.</p>
-        <div class="svc-tags"><span class="tag">Weekly reels</span><span class="tag">Posting</span><span class="tag">Captions</span><span class="tag">Growth</span></div>
-      </div>
-      <div class="arrow">↗</div>
-    </div>
-    <div class="svc reveal">
-      <div class="num">05</div>
       <div>
         <h3>Portraits &amp; BTS</h3>
         <p class="svc-desc">Headshots, creator portraits and behind-the-scenes photos for film and production sets.</p>
@@ -555,10 +530,10 @@ const REELS=[
   ['ramadan-icpc','Promo · ICPC NJ','If Ramadan was a person'],
   ['camp-2024','Event recap','Camp 2024 moments'],
   ['spamming-timeline','Short film · Director & editor','Spamming Timeline'],
-  ['dabka-islamic-relief','Intro · Islamic Relief USA','Dabka, online',true],
   ['something-to-tell','Cinematic · Sony A7','Something I want to tell you'],
   ['intermsa','Promo · InterMSA','We don’t follow the algorithm'],
   ['essential','Cinematic edit','What is essential is invisible'],
+  ['dabka-islamic-relief','Intro · Islamic Relief USA','Dabka, online',true],
   ['eid','Story','Eid, through a kid’s eyes'],
   ['summer-23','Cinematic edit','Summer ’23'],
   ['timeline-breakdown','Editing breakdown','Three days, one video'],
@@ -577,10 +552,6 @@ const half=Math.ceil(pick.length/2);
 const ROYAL=[
   ['royal-flower-layers','Royal Jewelry','Flower layers','109K likes'],
   ['royal-new-in-stock','Royal Jewelry','New in stock','32K likes'],
-  ['royal-bangles','Royal Jewelry','Luxury meets durability','7.5K likes'],
-  ['royal-coin-bracelets','Royal Jewelry','Coin bracelets','4.5K likes'],
-  ['royal-rose-bracelets','Royal Jewelry','Rose bracelets','3.2K likes'],
-  ['royal-paterson','Royal Jewelry','The Paterson store','708 likes'],
 ];
 
 /* ---------- Build: reels ---------- */
@@ -609,8 +580,11 @@ const canHover=matchMedia('(hover:hover)').matches;
     r.addEventListener('mouseleave',()=>{v.pause();r.classList.remove('playing')});
   }
 });
-document.getElementById('reelPrev').onclick=()=>track.scrollBy({left:-track.clientWidth*.8,behavior:'smooth'});
-document.getElementById('reelNext').onclick=()=>track.scrollBy({left:track.clientWidth*.8,behavior:'smooth'});
+const REEL_LIMIT=7;
+reelEls.forEach((r,i)=>{if(i>=REEL_LIMIT)r.classList.add('is-hidden')});
+const reelMoreRow=document.getElementById('reelMoreRow');
+if(reelEls.length<=REEL_LIMIT)reelMoreRow.style.display='none';
+document.getElementById('reelMore').onclick=()=>{reelEls.forEach(r=>r.classList.remove('is-hidden'));reelMoreRow.style.display='none'};
 
 /* ---------- Build: gallery ---------- */
 const gallery=document.getElementById('gallery');
