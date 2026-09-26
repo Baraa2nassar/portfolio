@@ -141,8 +141,9 @@ section{position:relative}
 .fbtn:hover{color:var(--text);border-color:var(--muted)}
 .fbtn.active{background:var(--text);color:var(--bg);border-color:var(--text)}
 .fbtn .n{opacity:.55;margin-left:4px;font-size:.78em}
-.gallery{columns:3;column-gap:14px}
-.g-item{break-inside:avoid;margin-bottom:14px;position:relative;overflow:hidden;border-radius:6px;cursor:pointer;background:var(--surface)}
+.gallery{display:flex;gap:14px;align-items:flex-start}
+.g-col{flex:1;min-width:0;display:flex;flex-direction:column;gap:14px}
+.g-item{position:relative;overflow:hidden;border-radius:6px;cursor:pointer;background:var(--surface)}
 .g-item img{width:100%;height:auto;transition:transform .7s var(--ease)}
 .g-item:hover img{transform:scale(1.04)}
 .g-item .cap{position:absolute;left:0;right:0;bottom:0;padding:40px 16px 14px;background:linear-gradient(transparent,rgba(12,11,10,.85));opacity:0;transform:translateY(8px);transition:all .35s var(--ease)}
@@ -220,7 +221,6 @@ footer.foot{border-top:1px solid var(--line);padding:34px 0}
   .nav-toggle{display:block}
   .feature,.about-grid{grid-template-columns:1fr;gap:40px}
   .about-portrait{max-width:420px}
-  .gallery{columns:2}
   .svc{grid-template-columns:44px 1fr;gap:18px}
   .svc .arrow{display:none}
 }
@@ -228,8 +228,7 @@ footer.foot{border-top:1px solid var(--line);padding:34px 0}
   .container{padding:0 18px}
   .reels{gap:22px 10px}
   .hero{padding-top:120px}
-  .gallery{column-gap:10px}
-  .g-item{margin-bottom:10px}
+  .gallery,.g-col{gap:10px}
 }
 </style>
 </head>
@@ -460,69 +459,59 @@ footer.foot{border-top:1px solid var(--line);padding:34px 0}
 const W='img/studio/work/', R='img/studio/reels/', G='img/creative_photos_showreel/';
 // [thumb, full, category, kicker, title]
 const PHOTOS=[
-  [W+'thumb/lake-sunset.jpg',W+'full/lake-sunset.jpg','events','ICPC Camp','Last light on the lake'],
-  [G+'compress/gold1.jpg',G+'gold1.jpg','brand','Product · Nassar Gold','Fine jewelry, lit for luxury'],
-  [W+'thumb/camp25-marshmallows.jpg',W+'full/camp25-marshmallows.jpg','events','ICPC Camp 2025','Campfire night'],
-  [W+'thumb/camp24-sparkler.jpg',W+'full/camp24-sparkler.jpg','events','ICPC Camp 2024','Sparkler'],
-  [W+'thumb/veiled-storefront.jpg',W+'full/veiled-storefront.jpg','brand','Brand · Storefront','Veiled, opening night'],
-  [W+'thumb/camp23-huddle.jpg',W+'full/camp23-huddle.jpg','events','ICPC Camp 2023','The huddle'],
-  [W+'thumb/camp24-hype.jpg',W+'full/camp24-hype.jpg','events','ICPC Camp 2024','Hype'],
-  [W+'thumb/speaker.jpg',W+'full/speaker.jpg','events','Event','Full room'],
-  [W+'thumb/camp25-storyteller.jpg',W+'full/camp25-storyteller.jpg','events','ICPC Camp 2025','Stories by the fire'],
-  [W+'thumb/camp25-volley.jpg',W+'full/camp25-volley.jpg','events','ICPC Camp 2025','Game point'],
-  [W+'thumb/above-clouds.jpg',W+'full/above-clouds.jpg','portraits','Landscape','Above the clouds'],
-  [W+'thumb/aljazeera-800m.jpg',W+'full/aljazeera-800m.jpg','film','Al Jazeera · 800 Meters','Documentary set'],
-  [W+'thumb/camp25-dusk.jpg',W+'full/camp25-dusk.jpg','events','ICPC Camp 2025','Dusk'],
-  [W+'thumb/camp24-elder.jpg',W+'full/camp24-elder.jpg','events','ICPC Camp 2024','Under the tree'],
-  [W+'thumb/table-laughs.jpg',W+'full/table-laughs.jpg','events','Community','Candid'],
-  [G+'compress/gold3.jpg',G+'gold3.jpg','brand','Product · Nassar Gold','Detail & texture'],
-  [W+'thumb/camp24-beam.jpg',W+'full/camp24-beam.jpg','events','ICPC Camp 2024','Night sky'],
-  [W+'thumb/camp22-fire.jpg',W+'full/camp22-fire.jpg','events','ICPC Camp 2022','Fireside'],
-  [W+'thumb/camp25-circle.jpg',W+'full/camp25-circle.jpg','events','ICPC Camp 2025','Lakeside circle'],
-  [W+'thumb/ummah-professionals.jpg',W+'full/ummah-professionals.jpg','brand','Event · Ummah Professionals','Brand in the room'],
-  [W+'thumb/camp25-net.jpg',W+'full/camp25-net.jpg','events','ICPC Camp 2025','Behind the net'],
-  [W+'thumb/fireworks.jpg',W+'full/fireworks.jpg','portraits','Blue hour','Far away'],
-  [W+'thumb/camp21-thumbs.jpg',W+'full/camp21-thumbs.jpg','events','Camp 2021','Good energy'],
-  [W+'thumb/camp24-mic.jpg',W+'full/camp24-mic.jpg','events','ICPC Camp 2024','Q&A night'],
-  [W+'thumb/camp25-golden.jpg',W+'full/camp25-golden.jpg','events','ICPC Camp 2025','Golden hour'],
-  [W+'thumb/portrait-sky.jpg',W+'full/portrait-sky.jpg','portraits','Portrait','Looking up'],
-  [W+'thumb/aljazeera-rig.jpg',W+'full/aljazeera-rig.jpg','film','Al Jazeera · 800 Meters','Rigging up'],
-  [W+'thumb/camp23-lake.jpg',W+'full/camp23-lake.jpg','events','ICPC Camp 2023','Into the lake'],
-  [W+'thumb/camp23-mentor.jpg',W+'full/camp23-mentor.jpg','events','ICPC Camp 2023','Mentors'],
-  [W+'thumb/camp23-chains.jpg',W+'full/camp23-chains.jpg','events','ICPC Camp 2023','Chains of freedom'],
-  [W+'thumb/giant-chair.jpg',W+'full/giant-chair.jpg','events','ICPC Camp 2022','The giant chair'],
-  [W+'thumb/camp25-torches.jpg',W+'full/camp25-torches.jpg','events','ICPC Camp 2025','Fire torches'],
-  [G+'compress/gold2.jpg',G+'gold2.jpg','brand','Product · Nassar Gold','Hero shot'],
-  [W+'thumb/soccer.jpg',W+'full/soccer.jpg','portraits','Portrait','Pause'],
-  [W+'thumb/camp25-porch.jpg',W+'full/camp25-porch.jpg','events','ICPC Camp 2025','Evening talk'],
-  [W+'thumb/bonfire-stars.jpg',W+'full/bonfire-stars.jpg','events','Camp','Sparks and stars'],
-  [W+'thumb/camp24-faces.jpg',W+'full/camp24-faces.jpg','events','ICPC Camp 2024','First day'],
-  [W+'thumb/camp-smile.jpg',W+'full/camp-smile.jpg','events','ICPC Camp','Between sessions'],
-  [W+'thumb/aljazeera-monitor.jpg',W+'full/aljazeera-monitor.jpg','film','Al Jazeera · 800 Meters','Monitor check'],
-  [W+'thumb/camp23-porch.jpg',W+'full/camp23-porch.jpg','events','ICPC Camp 2023','Arrival'],
-  [W+'thumb/camp23-night-porch.jpg',W+'full/camp23-night-porch.jpg','events','ICPC Camp 2023','Night on the porch'],
-  [W+'thumb/camp23-court.jpg',W+'full/camp23-court.jpg','events','ICPC Camp 2023','Courtside'],
-  [W+'thumb/camp25-listening.jpg',W+'full/camp25-listening.jpg','events','ICPC Camp 2025','Listening'],
-  [W+'thumb/conversation.jpg',W+'full/conversation.jpg','events','Community','Conversation'],
-  [W+'thumb/ferris-wheel.jpg',W+'full/ferris-wheel.jpg','portraits','Portrait','City lights'],
-  [W+'thumb/camp25-flag.jpg',W+'full/camp25-flag.jpg','events','ICPC Camp 2025','Capture the flag'],
-  [W+'thumb/camp25-cart.jpg',W+'full/camp25-cart.jpg','events','ICPC Camp 2025','Golf cart'],
-  [W+'thumb/baraa-print.jpg',W+'full/baraa-print.jpg','brand','Product','Golden hour detail'],
-  [W+'thumb/camp25-bonfire.jpg',W+'full/camp25-bonfire.jpg','events','ICPC Camp 2025','The bonfire'],
-  [W+'thumb/snow-lamp.jpg',W+'full/snow-lamp.jpg','portraits','Night','Under the lamp'],
-  [W+'thumb/camp25-brothers.jpg',W+'full/camp25-brothers.jpg','events','ICPC Camp 2025','Brothers'],
-  [W+'thumb/lakeside.jpg',W+'full/lakeside.jpg','portraits','Portrait','Lakeside'],
-  [W+'thumb/camp22-window.jpg',W+'full/camp22-window.jpg','events','ICPC Camp 2022','Through the window'],
-  [W+'thumb/camp25-lineup.jpg',W+'full/camp25-lineup.jpg','events','ICPC Camp 2025','Team lineup'],
-  [W+'thumb/aljazeera-set.jpg',W+'full/aljazeera-set.jpg','film','Al Jazeera · 800 Meters','Behind the scenes'],
-  [G+'compress/gold4.jpg',G+'gold4.jpg','brand','Product · Nassar Gold','Catalog frame'],
-  [W+'thumb/camp25-iceberg.jpg',W+'full/camp25-iceberg.jpg','events','ICPC Camp 2025','The iceberg'],
-  [W+'thumb/camp21-run.jpg',W+'full/camp21-run.jpg','events','Camp 2021','Sprint'],
-  [W+'thumb/woods.jpg',W+'full/woods.jpg','portraits','Portrait','In the woods'],
-  [W+'thumb/camp21-duo.jpg',W+'full/camp21-duo.jpg','events','Camp 2021','Counselors'],
-  [W+'thumb/somehow-somewhere.jpg',W+'full/somehow-somewhere.jpg','portraits','Landscape','Somehow, somewhere'],
-  [W+'thumb/camp22-arrival.jpg',W+'full/camp22-arrival.jpg','events','ICPC Camp 2022','Arrival day'],
-  [W+'thumb/camp-grass.jpg',W+'full/camp-grass.jpg','events','Camp','Details'],
+  [W+'thumb/aljazeera-rig.jpg',W+'full/aljazeera-rig.jpg','film','Al Jazeera · 800 Meters','Rigging up',1.5],
+  [W+'thumb/veiled-storefront.jpg',W+'full/veiled-storefront.jpg','brand','Brand · Storefront','Veiled, opening night',0.668],
+  [W+'thumb/camp24-elder.jpg',W+'full/camp24-elder.jpg','events','ICPC Camp 2024','Under the tree',0.8],
+  [G+'compress/gold3.jpg',G+'gold3.jpg','brand','Product · Nassar Gold','Detail & texture',0.667],
+  [W+'thumb/camp23-huddle.jpg',W+'full/camp23-huddle.jpg','events','ICPC Camp 2023','The huddle',1.495],
+  [W+'thumb/baraa-print.jpg',W+'full/baraa-print.jpg','brand','Product','Golden hour detail',0.8],
+  [G+'compress/gold4.jpg',G+'gold4.jpg','brand','Product · Nassar Gold','Catalog frame',0.667],
+  [W+'thumb/speaker.jpg',W+'full/speaker.jpg','events','Event','Full room',0.668],
+  [W+'thumb/camp23-mentor.jpg',W+'full/camp23-mentor.jpg','events','ICPC Camp 2023','Mentors',1.5],
+  [W+'thumb/table-laughs.jpg',W+'full/table-laughs.jpg','events','Community','Candid',1.498],
+  [W+'thumb/ummah-professionals.jpg',W+'full/ummah-professionals.jpg','brand','Event · Ummah Professionals','Brand in the room',1.5],
+  [W+'thumb/camp25-cart.jpg',W+'full/camp25-cart.jpg','events','ICPC Camp 2025','Golf cart',0.8],
+  [W+'thumb/lake-sunset.jpg',W+'full/lake-sunset.jpg','events','ICPC Camp','Last light on the lake',1.5],
+  [W+'thumb/camp23-court.jpg',W+'full/camp23-court.jpg','events','ICPC Camp 2023','Courtside',1.5],
+  [W+'thumb/portrait-sky.jpg',W+'full/portrait-sky.jpg','portraits','Portrait','Looking up',1.498],
+  [W+'thumb/camp24-hype.jpg',W+'full/camp24-hype.jpg','events','ICPC Camp 2024','Hype',1.495],
+  [W+'thumb/soccer.jpg',W+'full/soccer.jpg','portraits','Portrait','Pause',0.8],
+  [W+'thumb/camp25-porch.jpg',W+'full/camp25-porch.jpg','events','ICPC Camp 2025','Evening talk',0.75],
+  [W+'thumb/camp23-lake.jpg',W+'full/camp23-lake.jpg','events','ICPC Camp 2023','Into the lake',1.5],
+  [W+'thumb/camp25-dusk.jpg',W+'full/camp25-dusk.jpg','events','ICPC Camp 2025','Dusk',1.5],
+  [W+'thumb/aljazeera-800m.jpg',W+'full/aljazeera-800m.jpg','film','Al Jazeera · 800 Meters','Documentary set',1.503],
+  [W+'thumb/camp25-flag.jpg',W+'full/camp25-flag.jpg','events','ICPC Camp 2025','Capture the flag',0.75],
+  [W+'thumb/conversation.jpg',W+'full/conversation.jpg','events','Community','Conversation',1.498],
+  [W+'thumb/fireworks.jpg',W+'full/fireworks.jpg','portraits','Blue hour','Far away',0.799],
+  [W+'thumb/giant-chair.jpg',W+'full/giant-chair.jpg','events','ICPC Camp 2022','The giant chair',0.75],
+  [W+'thumb/camp24-mic.jpg',W+'full/camp24-mic.jpg','events','ICPC Camp 2024','Q&A night',1.495],
+  [W+'thumb/lakeside.jpg',W+'full/lakeside.jpg','portraits','Portrait','Lakeside',1.498],
+  [W+'thumb/camp21-thumbs.jpg',W+'full/camp21-thumbs.jpg','events','Camp 2021','Good energy',1.0],
+  [W+'thumb/camp25-volley.jpg',W+'full/camp25-volley.jpg','events','ICPC Camp 2025','Game point',0.75],
+  [W+'thumb/camp-smile.jpg',W+'full/camp-smile.jpg','events','ICPC Camp','Between sessions',1.333],
+  [W+'thumb/camp25-listening.jpg',W+'full/camp25-listening.jpg','events','ICPC Camp 2025','Listening',0.75],
+  [W+'thumb/camp25-net.jpg',W+'full/camp25-net.jpg','events','ICPC Camp 2025','Behind the net',0.798],
+  [W+'thumb/woods.jpg',W+'full/woods.jpg','portraits','Portrait','In the woods',1.498],
+  [W+'thumb/somehow-somewhere.jpg',W+'full/somehow-somewhere.jpg','portraits','Landscape','Somehow, somewhere',1.5],
+  [W+'thumb/camp25-golden.jpg',W+'full/camp25-golden.jpg','events','ICPC Camp 2025','Golden hour',0.8],
+  [W+'thumb/snow-lamp.jpg',W+'full/snow-lamp.jpg','portraits','Night','Under the lamp',0.8],
+  [W+'thumb/above-clouds.jpg',W+'full/above-clouds.jpg','portraits','Landscape','Above the clouds',0.668],
+  [W+'thumb/camp22-window.jpg',W+'full/camp22-window.jpg','events','ICPC Camp 2022','Through the window',0.8],
+  [W+'thumb/camp-grass.jpg',W+'full/camp-grass.jpg','events','Camp','Details',1.498],
+  [W+'thumb/aljazeera-set.jpg',W+'full/aljazeera-set.jpg','film','Al Jazeera · 800 Meters','Behind the scenes',1.5],
+  [W+'thumb/camp24-sparkler.jpg',W+'full/camp24-sparkler.jpg','events','ICPC Camp 2024','Sparkler',0.8],
+  [W+'thumb/camp23-porch.jpg',W+'full/camp23-porch.jpg','events','ICPC Camp 2023','Arrival',1.5],
+  [W+'thumb/camp24-beam.jpg',W+'full/camp24-beam.jpg','events','ICPC Camp 2024','Night sky',1.495],
+  [W+'thumb/camp25-marshmallows.jpg',W+'full/camp25-marshmallows.jpg','events','ICPC Camp 2025','Campfire night',1.5],
+  [G+'compress/gold2.jpg',G+'gold2.jpg','brand','Product · Nassar Gold','Hero shot',1.511],
+  [G+'compress/gold1.jpg',G+'gold1.jpg','brand','Product · Nassar Gold','Fine jewelry, lit for luxury',1.377],
+  [W+'thumb/aljazeera-monitor.jpg',W+'full/aljazeera-monitor.jpg','film','Al Jazeera · 800 Meters','Monitor check',1.5],
+  [W+'thumb/camp25-storyteller.jpg',W+'full/camp25-storyteller.jpg','events','ICPC Camp 2025','Stories by the fire',0.75],
+  [W+'thumb/bonfire-stars.jpg',W+'full/bonfire-stars.jpg','events','Camp','Sparks and stars',0.75],
+  [W+'thumb/camp25-torches.jpg',W+'full/camp25-torches.jpg','events','ICPC Camp 2025','Fire torches',1.5],
+  [W+'thumb/camp25-bonfire.jpg',W+'full/camp25-bonfire.jpg','events','ICPC Camp 2025','The bonfire',1.495],
+  [W+'thumb/camp21-run.jpg',W+'full/camp21-run.jpg','events','Camp 2021','Sprint',1.0],
+  [W+'thumb/ferris-wheel.jpg',W+'full/ferris-wheel.jpg','portraits','Portrait','City lights',0.8],
 ];
 const CATS=[['all','All'],['brand','Brand & product'],['events','Events & community'],['portraits','Portraits & landscape'],['film','Film BTS']];
 // [file, kicker, title, landscape?]
@@ -541,7 +530,7 @@ const REELS=[
 ];
 
 /* ---------- Build: marquee ---------- */
-const pick=['lake-sunset','veiled-storefront','camp23-huddle','camp25-volley','camp22-fire','fireworks','aljazeera-rig','speaker','camp22-fire','above-clouds','ummah-professionals','giant-chair','soccer','camp21-thumbs'];
+const pick=['lake-sunset','veiled-storefront','camp23-huddle','camp25-volley','camp25-marshmallows','fireworks','aljazeera-rig','speaker','camp25-marshmallows','above-clouds','ummah-professionals','giant-chair','soccer','camp21-thumbs'];
 const half=Math.ceil(pick.length/2);
 [[pick.slice(0,half),'mRow1'],[pick.slice(half),'mRow2']].forEach(([list,id])=>{
   const html=list.map(n=>`<img src="${W}thumb/${n}.jpg" alt="" loading="lazy">`).join('');
@@ -588,9 +577,9 @@ document.getElementById('reelMore').onclick=()=>{reelEls.forEach(r=>r.classList.
 
 /* ---------- Build: gallery ---------- */
 const gallery=document.getElementById('gallery');
-gallery.innerHTML=PHOTOS.map(([th,full,cat,k,t])=>`
-  <div class="g-item" data-cat="${cat}" data-full="${full}" data-cap="${k} — ${t}">
-    <img loading="lazy" src="${th}" alt="${t}">
+gallery.innerHTML=PHOTOS.map(([th,full,cat,k,t,r])=>`
+  <div class="g-item" data-cat="${cat}" data-full="${full}" data-cap="${k} — ${t}" data-r="${r}">
+    <img loading="lazy" src="${th}" alt="${t}" style="aspect-ratio:${r}">
     <div class="cap"><div class="k">${k}</div><div class="t">${t}</div></div>
   </div>`).join('');
 const items=[...gallery.querySelectorAll('.g-item')];
@@ -606,7 +595,26 @@ function applyFilter(){
   items.forEach(it=>it.classList.add('is-hidden'));
   match.forEach((it,i)=>{if(expanded||i<LIMIT)it.classList.remove('is-hidden')});
   moreBtn.parentElement.style.display=(!expanded&&match.length>LIMIT)?'':'none';
+  layout();
 }
+// Masonry in reading order: each photo goes into the shortest column,
+// so the bright-to-dark order runs top to bottom across the whole grid.
+let colCount=0;
+function layout(force){
+  const n=innerWidth<=900?2:3;
+  if(n!==colCount||force!==false){
+    colCount=n;
+    gallery.innerHTML='';
+    const cols=Array.from({length:n},()=>{const c=document.createElement('div');c.className='g-col';gallery.appendChild(c);return c});
+    const h=new Array(n).fill(0);
+    items.forEach(it=>{
+      if(it.classList.contains('is-hidden')){cols[0].appendChild(it);return}
+      const i=h.indexOf(Math.min(...h));
+      cols[i].appendChild(it);h[i]+=1/parseFloat(it.dataset.r||1);
+    });
+  }
+}
+addEventListener('resize',()=>{if((innerWidth<=900?2:3)!==colCount)layout()});
 filterRow.addEventListener('click',e=>{
   const b=e.target.closest('.fbtn');if(!b)return;
   filterRow.querySelectorAll('.fbtn').forEach(x=>x.classList.remove('active'));
