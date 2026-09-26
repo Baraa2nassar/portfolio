@@ -96,6 +96,13 @@ section{position:relative}
 .feature-imgs .fi:first-child{grid-column:span 2}
 .feature-imgs img{width:100%;aspect-ratio:3/2;object-fit:cover;transition:transform .7s var(--ease)}
 .feature-imgs .fi:hover img{transform:scale(1.04)}
+.feature-imgs .fi{position:relative}
+.feature-imgs .doc-play{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;flex-direction:column;gap:12px;background:linear-gradient(transparent 40%,rgba(12,11,10,.55))}
+.feature-imgs .doc-play span{width:68px;height:68px;border-radius:50%;background:rgba(12,11,10,.55);backdrop-filter:blur(6px);border:1px solid rgba(255,255,255,.5);display:flex;align-items:center;justify-content:center;transition:all .3s}
+.feature-imgs .fi:hover .doc-play span{background:var(--gold);border-color:var(--gold)}
+.feature-imgs .doc-play svg{width:22px;height:22px;fill:#fff;margin-left:3px}
+.feature-imgs .fi:hover .doc-play svg{fill:#120e08}
+.feature-imgs .doc-play em{font-style:normal;font-size:.8rem;letter-spacing:.14em;text-transform:uppercase}
 .feature h3{font-size:clamp(1.8rem,3.4vw,2.8rem);margin-top:18px}
 .feature p{color:var(--muted);margin-top:18px;max-width:46ch}
 .feature dl{margin-top:30px;display:grid;grid-template-columns:auto 1fr;gap:10px 26px;font-size:.94rem}
@@ -275,20 +282,20 @@ footer.foot{border-top:1px solid var(--line);padding:34px 0}
 <section class="pad" id="featured">
   <div class="container feature">
     <div class="feature-imgs reveal" id="featureImgs">
+      <div class="fi" data-yt="HBHJiF96ZOs" data-cap="800 Meters — Al Jazeera Documentary (full film)"><img loading="lazy" src="img/studio/work/thumb/800m-doc.jpg" alt="Still from the documentary 800 Meters"><div class="doc-play"><span><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span><em>Watch the film · 25 min</em></div></div>
       <div class="fi" data-full="img/studio/work/full/aljazeera-rig.jpg" data-cap="On set — camera rig"><img loading="lazy" src="img/studio/work/thumb/aljazeera-rig.jpg" alt="Camera rig on the set of the documentary 800 Meters"></div>
       <div class="fi" data-full="img/studio/work/full/aljazeera-monitor.jpg" data-cap="Monitor check"><img loading="lazy" src="img/studio/work/thumb/aljazeera-monitor.jpg" alt="Camera monitor on set"></div>
-      <div class="fi" data-full="img/studio/work/full/aljazeera-set.jpg" data-cap="Behind the scenes"><img loading="lazy" src="img/studio/work/thumb/aljazeera-set.jpg" alt="Behind the scenes on set"></div>
     </div>
     <div class="reveal d1">
       <span class="eyebrow">Featured credit</span>
       <h3>“800 Meters” — a documentary for Al Jazeera</h3>
-      <p>Aired on Al Jazeera Documentary and now streaming on YouTube. I was second assistant camera and shot the behind-the-scenes coverage.</p>
+      <p>Aired on Al Jazeera Documentary and now streaming on YouTube. I was the second videographer and also shot the behind-the-scenes coverage.</p>
       <dl>
-        <dt>Role</dt><dd>2nd Assistant Camera · BTS</dd>
+        <dt>Role</dt><dd>Second videographer · BTS</dd>
         <dt>Director</dt><dd>Anas Tolba</dd>
         <dt>Network</dt><dd>Al Jazeera Documentary</dd>
       </dl>
-      <a class="btn btn-ghost" href="https://www.instagram.com/p/Cx6PDUbAxzn/" target="_blank" rel="noopener">See the BTS post ↗</a>
+      <a class="btn btn-ghost" href="https://www.youtube.com/watch?v=HBHJiF96ZOs" target="_blank" rel="noopener">Watch on YouTube ↗</a>
     </div>
   </div>
 </section>
@@ -441,38 +448,55 @@ const W='img/studio/work/', R='img/studio/reels/', G='img/creative_photos_showre
 const PHOTOS=[
   [W+'thumb/lake-sunset.jpg',W+'full/lake-sunset.jpg','events','ICPC Camp','Last light on the lake'],
   [G+'compress/gold1.jpg',G+'gold1.jpg','brand','Product · Nassar Gold','Fine jewelry, lit for luxury'],
+  [W+'thumb/camp25-marshmallows.jpg',W+'full/camp25-marshmallows.jpg','events','ICPC Camp 2025','Campfire night'],
   [W+'thumb/veiled-storefront.jpg',W+'full/veiled-storefront.jpg','brand','Brand · Storefront','Veiled, opening night'],
   [W+'thumb/camp23-huddle.jpg',W+'full/camp23-huddle.jpg','events','ICPC Camp 2023','The huddle'],
+  [W+'thumb/camp24-hype.jpg',W+'full/camp24-hype.jpg','events','ICPC Camp 2024','Hype'],
   [W+'thumb/intermsa-01.jpg',W+'full/intermsa-01.jpg','brand','Campaign · InterMSA','Event shirt campaign'],
   [W+'thumb/speaker.jpg',W+'full/speaker.jpg','events','Event','Full room'],
+  [W+'thumb/camp25-volley.jpg',W+'full/camp25-volley.jpg','events','ICPC Camp 2025','Game point'],
   [W+'thumb/above-clouds.jpg',W+'full/above-clouds.jpg','portraits','Landscape','Above the clouds'],
   [W+'thumb/aljazeera-800m.jpg',W+'full/aljazeera-800m.jpg','film','Al Jazeera · 800 Meters','Documentary set'],
+  [W+'thumb/camp25-dusk.jpg',W+'full/camp25-dusk.jpg','events','ICPC Camp 2025','Dusk'],
   [W+'thumb/table-laughs.jpg',W+'full/table-laughs.jpg','events','Community','Candid'],
   [G+'compress/gold3.jpg',G+'gold3.jpg','brand','Product · Nassar Gold','Detail & texture'],
+  [W+'thumb/camp24-beam.jpg',W+'full/camp24-beam.jpg','events','ICPC Camp 2024','Night sky'],
   [W+'thumb/camp22-fire.jpg',W+'full/camp22-fire.jpg','events','ICPC Camp 2022','Fireside'],
   [W+'thumb/ummah-professionals.jpg',W+'full/ummah-professionals.jpg','brand','Event · Ummah Professionals','Brand in the room'],
+  [W+'thumb/camp25-net.jpg',W+'full/camp25-net.jpg','events','ICPC Camp 2025','Behind the net'],
   [W+'thumb/fireworks.jpg',W+'full/fireworks.jpg','portraits','Blue hour','Far away'],
   [W+'thumb/camp21-thumbs.jpg',W+'full/camp21-thumbs.jpg','events','Camp 2021','Good energy'],
+  [W+'thumb/camp25-golden.jpg',W+'full/camp25-golden.jpg','events','ICPC Camp 2025','Golden hour'],
   [W+'thumb/portrait-sky.jpg',W+'full/portrait-sky.jpg','portraits','Portrait','Looking up'],
   [W+'thumb/aljazeera-rig.jpg',W+'full/aljazeera-rig.jpg','film','Al Jazeera · 800 Meters','Rigging up'],
+  [W+'thumb/camp24-lakeside-walk.jpg',W+'full/camp24-lakeside-walk.jpg','events','ICPC Camp 2024','Lakeside walk'],
   [W+'thumb/camp23-lake.jpg',W+'full/camp23-lake.jpg','events','ICPC Camp 2023','Into the lake'],
   [W+'thumb/giant-chair.jpg',W+'full/giant-chair.jpg','events','ICPC Camp 2022','The giant chair'],
+  [W+'thumb/camp25-torches.jpg',W+'full/camp25-torches.jpg','events','ICPC Camp 2025','Fire torches'],
   [G+'compress/gold2.jpg',G+'gold2.jpg','brand','Product · Nassar Gold','Hero shot'],
   [W+'thumb/soccer.jpg',W+'full/soccer.jpg','portraits','Portrait','Pause'],
+  [W+'thumb/camp25-waterfront.jpg',W+'full/camp25-waterfront.jpg','events','ICPC Camp 2025','Waterfront crew'],
   [W+'thumb/bonfire-stars.jpg',W+'full/bonfire-stars.jpg','events','Camp','Sparks and stars'],
   [W+'thumb/intermsa-02.jpg',W+'full/intermsa-02.jpg','brand','Campaign · InterMSA','Fall collection'],
+  [W+'thumb/camp24-faces.jpg',W+'full/camp24-faces.jpg','events','ICPC Camp 2024','First day'],
   [W+'thumb/camp-smile.jpg',W+'full/camp-smile.jpg','events','ICPC Camp','Between sessions'],
   [W+'thumb/aljazeera-monitor.jpg',W+'full/aljazeera-monitor.jpg','film','Al Jazeera · 800 Meters','Monitor check'],
+  [W+'thumb/camp25-listening.jpg',W+'full/camp25-listening.jpg','events','ICPC Camp 2025','Listening'],
   [W+'thumb/conversation.jpg',W+'full/conversation.jpg','events','Community','Conversation'],
   [W+'thumb/ferris-wheel.jpg',W+'full/ferris-wheel.jpg','portraits','Portrait','City lights'],
+  [W+'thumb/camp25-flag.jpg',W+'full/camp25-flag.jpg','events','ICPC Camp 2025','Capture the flag'],
   [W+'thumb/camp21-burger.jpg',W+'full/camp21-burger.jpg','events','Camp 2021','Lunch break'],
   [W+'thumb/baraa-print.jpg',W+'full/baraa-print.jpg','brand','Product','Golden hour detail'],
+  [W+'thumb/camp25-bonfire.jpg',W+'full/camp25-bonfire.jpg','events','ICPC Camp 2025','The bonfire'],
   [W+'thumb/camp23-group.jpg',W+'full/camp23-group.jpg','events','ICPC Camp 2023','Group shot'],
   [W+'thumb/snow-lamp.jpg',W+'full/snow-lamp.jpg','portraits','Night','Under the lamp'],
+  [W+'thumb/camp25-brothers.jpg',W+'full/camp25-brothers.jpg','events','ICPC Camp 2025','Brothers'],
   [W+'thumb/lakeside.jpg',W+'full/lakeside.jpg','portraits','Portrait','Lakeside'],
   [W+'thumb/camp22-window.jpg',W+'full/camp22-window.jpg','events','ICPC Camp 2022','Through the window'],
+  [W+'thumb/camp25-lineup.jpg',W+'full/camp25-lineup.jpg','events','ICPC Camp 2025','Team lineup'],
   [W+'thumb/aljazeera-set.jpg',W+'full/aljazeera-set.jpg','film','Al Jazeera · 800 Meters','Behind the scenes'],
   [G+'compress/gold4.jpg',G+'gold4.jpg','brand','Product · Nassar Gold','Catalog frame'],
+  [W+'thumb/camp25-iceberg.jpg',W+'full/camp25-iceberg.jpg','events','ICPC Camp 2025','The iceberg'],
   [W+'thumb/camp21-run.jpg',W+'full/camp21-run.jpg','events','Camp 2021','Sprint'],
   [W+'thumb/woods.jpg',W+'full/woods.jpg','portraits','Portrait','In the woods'],
   [W+'thumb/camp21-duo.jpg',W+'full/camp21-duo.jpg','events','Camp 2021','Counselors'],
@@ -574,7 +598,9 @@ const lb=document.getElementById('lb'),lbMedia=document.getElementById('lbMedia'
 let list=[],idx=0;
 function render(){
   const it=list[idx],cap=`<div class="lb-cap">${it.dataset.cap||''}</div>`;
-  lbMedia.innerHTML=it.dataset.video
+  lbMedia.innerHTML=it.dataset.yt
+    ?`<iframe src="https://www.youtube.com/embed/${it.dataset.yt}?autoplay=1&rel=0" allow="autoplay; fullscreen" allowfullscreen></iframe>`+cap
+    :it.dataset.video
     ?`<video src="${it.dataset.video}" controls autoplay playsinline></video>`+cap
     :`<img src="${it.dataset.full}" alt="">`+cap;
 }
