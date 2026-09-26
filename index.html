@@ -382,7 +382,7 @@ footer.foot{border-top:1px solid var(--line);padding:34px 0}
 <section class="pad" id="about">
   <div class="container about-grid">
     <div class="about-portrait reveal">
-      <img src="img/studio/about/portrait.jpg" alt="Baraa Nassar">
+      <img src="img/studio/about/portrait.jpg" alt="Portrait of Baraa Nassar">
     </div>
     <div class="about-body reveal d1">
       <span class="eyebrow">About</span>
@@ -442,7 +442,6 @@ const PHOTOS=[
   [W+'thumb/lake-sunset.jpg',W+'full/lake-sunset.jpg','events','ICPC Camp','Last light on the lake'],
   [G+'compress/gold1.jpg',G+'gold1.jpg','brand','Product · Nassar Gold','Fine jewelry, lit for luxury'],
   [W+'thumb/veiled-storefront.jpg',W+'full/veiled-storefront.jpg','brand','Brand · Storefront','Veiled, opening night'],
-  [W+'thumb/portrait-scarf.jpg',W+'full/portrait-scarf.jpg','portraits','Portrait','Autumn portrait'],
   [W+'thumb/camp23-huddle.jpg',W+'full/camp23-huddle.jpg','events','ICPC Camp 2023','The huddle'],
   [W+'thumb/intermsa-01.jpg',W+'full/intermsa-01.jpg','brand','Campaign · InterMSA','Event shirt campaign'],
   [W+'thumb/speaker.jpg',W+'full/speaker.jpg','events','Event','Full room'],
@@ -498,7 +497,7 @@ const REELS=[
 ];
 
 /* ---------- Build: marquee ---------- */
-const pick=['lake-sunset','veiled-storefront','camp23-huddle','portrait-scarf','intermsa-01','fireworks','aljazeera-rig','speaker','camp22-fire','above-clouds','ummah-professionals','giant-chair','soccer','camp21-thumbs'];
+const pick=['lake-sunset','veiled-storefront','camp23-huddle','intermsa-01','camp22-fire','fireworks','aljazeera-rig','speaker','camp22-fire','above-clouds','ummah-professionals','giant-chair','soccer','camp21-thumbs'];
 const half=Math.ceil(pick.length/2);
 [[pick.slice(0,half),'mRow1'],[pick.slice(half),'mRow2']].forEach(([list,id])=>{
   const html=list.map(n=>`<img src="${W}thumb/${n}.jpg" alt="" loading="lazy">`).join('');
