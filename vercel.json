@@ -1,6 +1,15 @@
 {
   "cleanUrls": true,
   "redirects": [
-    { "source": "/studio", "destination": "/", "permanent": true }
+    {
+      "source": "/studio",
+      "destination": "/",
+      "permanent": true
+    },
+    {
+      "source": "/dp",
+      "destination": "/",
+      "permanent": false
+    }
   ]
 }

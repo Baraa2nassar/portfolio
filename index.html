@@ -3,12 +3,12 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Baraa Nassar — Photo &amp; Video Studio</title>
-<meta name="description" content="Baraa Nassar — photographer and video editor in Dumont, NJ. Brand content, event coverage, portraits, and short-form video for businesses and communities across NJ, NYC and remote.">
+<title>Baraa Nassar — Director of Photography</title>
+<meta name="description" content="Baraa Nassar — director of photography for documentary and interview work, NJ / NYC. Second videographer on the Al Jazeera documentary 800 Meters. Shoots on the Sony FX3.">
 
-<meta property="og:title" content="Baraa Nassar — Photo & Video Studio">
-<meta property="og:description" content="Brand content, event coverage and reels — shot and edited end to end.">
-<meta property="og:image" content="img/studio/work/full/lake-sunset.jpg">
+<meta property="og:title" content="Baraa Nassar — Director of Photography">
+<meta property="og:description" content="Documentary and interview cinematography. Second videographer on Al Jazeera's 800 Meters.">
+<meta property="og:image" content="img/studio/work/full/aljazeera-800m.jpg">
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://baraa2nassar.com/">
 <link rel="icon" href="img/100pxtab_icon.png" type="image/x-icon">
@@ -152,6 +152,10 @@ section{position:relative}
 .g-item .cap .t{font-weight:500;margin-top:2px}
 .g-item.is-hidden{display:none}
 .more-row{text-align:center;margin-top:30px}
+.other-body{margin-top:60px}
+.other-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:10px;margin-top:40px}
+.other-grid .g-item img{width:100%;aspect-ratio:1;object-fit:cover;display:block}
+@media (max-width:900px){.other-grid{grid-template-columns:repeat(3,1fr)}}
 
 /* ---------- Services ---------- */
 .services{background:var(--bg-2);border-top:1px solid var(--line);border-bottom:1px solid var(--line)}
@@ -236,14 +240,16 @@ footer.foot{border-top:1px solid var(--line);padding:34px 0}
 
 <header class="nav" id="nav">
   <div class="container nav-inner">
-    <a href="#top" class="wordmark">Baraa Nassar <small>Studio</small></a>
+    <a href="#top" class="wordmark">Baraa Nassar <small>DP</small></a>
     <button class="nav-toggle" id="navToggle" aria-label="Menu">☰</button>
     <nav class="nav-links" id="navLinks">
-      <a class="navlink" href="#reels">Reels</a>
-      <a class="navlink" href="#work">Photos</a>
-      <a class="navlink" href="#services">Services</a>
+      <a class="navlink" href="#featured">Al Jazeera</a>
+      <a class="navlink" href="#interviews">Interviews</a>
+      <a class="navlink" href="#bts">BTS</a>
+      <a class="navlink" href="#reels">Films</a>
+      <a class="navlink" href="#work">Frames</a>
       <a class="navlink" href="#about">About</a>
-      <a class="btn btn-primary" href="mailto:baraa2aziz@gmail.com?subject=Project%20inquiry">Book a shoot</a>
+      <a class="btn btn-primary" href="mailto:baraa2aziz@gmail.com?subject=DP%20inquiry">Get in touch</a>
     </nav>
   </div>
 </header>
@@ -251,13 +257,13 @@ footer.foot{border-top:1px solid var(--line);padding:34px 0}
 <!-- ============ HERO ============ -->
 <section class="hero" id="top">
   <div class="container">
-    <span class="eyebrow reveal">Photographer &amp; video editor · NJ / NYC</span>
-    <h1 class="reveal d1">Photo and video that make people <span class="accent">stop scrolling.</span></h1>
+    <span class="eyebrow reveal">Director of Photography · NJ / NYC</span>
+    <h1 class="reveal d1">Documentary and interview <span class="accent">cinematography.</span></h1>
     <div class="hero-row">
-      <p class="sub reveal d2">Brand content, event coverage, portraits and short-form reels. I shoot and edit everything myself, so you get one consistent look.</p>
+      <p class="sub reveal d2">Second videographer on the Al Jazeera documentary “800 Meters.” I light and shoot sit-down interviews, documentary scenes and short films on the Sony FX3.</p>
       <div class="cta-row reveal d2">
-        <a class="btn btn-primary" href="mailto:baraa2aziz@gmail.com?subject=Project%20inquiry">Book a shoot</a>
-        <a class="btn btn-ghost" href="#reels">Watch reels</a>
+        <a class="btn btn-primary" href="#interviews">See interview work</a>
+        <a class="btn btn-ghost" href="#featured">Al Jazeera credit</a>
       </div>
     </div>
   </div>
@@ -277,7 +283,6 @@ footer.foot{border-top:1px solid var(--line);padding:34px 0}
     <span class="cl">InterMSA</span>
     <span class="cl">Royal Jewelry</span>
     <span class="cl">Nassar Gold</span>
-    <span class="cl">Montclair State Robotics</span>
   </div>
 </div>
 
@@ -303,16 +308,35 @@ footer.foot{border-top:1px solid var(--line);padding:34px 0}
   </div>
 </section>
 
-<!-- ============ ROYAL JEWELRY ============ -->
-<section class="pad" id="royal" style="padding-top:0">
-  <div class="container case">
-    <div class="reveal">
-      <span class="eyebrow">Product video</span>
-      <h2>Royal Jewelry — <span class="accent">21k gold, on camera</span></h2>
-      <p>Product reels for Royal Jewelry, a gold jeweler in Paterson, NJ. Shot at the counter and cut short, so the pieces sell themselves. The top two reached 109K and 32K likes.</p>
-      <a class="btn btn-ghost" href="https://www.instagram.com/royalnjewelry1/" target="_blank" rel="noopener">See @royalnjewelry1 ↗</a>
+<!-- ============ INTERVIEWS ============ -->
+<section class="pad" id="interviews" style="padding-top:0">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow reveal">Interview work</span>
+        <h2 class="reveal d1">Sit-down <span class="accent">interviews</span></h2>
+      </div>
+      <p class="reveal d1">Lit and shot for ICPC NJ. Hover to preview, click to watch with sound.</p>
     </div>
-    <div class="reels reveal d1" id="royal-track"></div>
+  </div>
+  <div class="container">
+    <div class="reels reveal" id="interviews-track"></div>
+  </div>
+</section>
+
+<!-- ============ BTS ============ -->
+<section class="pad" id="bts" style="padding-top:0">
+  <div class="container">
+    <div class="sec-head">
+      <div>
+        <span class="eyebrow reveal">Behind the camera</span>
+        <h2 class="reveal d1">On set &amp; <span class="accent">lighting</span></h2>
+      </div>
+      <p class="reveal d1">Setups from 800 Meters and my interview shoots.</p>
+    </div>
+  </div>
+  <div class="container">
+    <div class="reels reveal" id="bts-track"></div>
   </div>
 </section>
 
@@ -321,14 +345,13 @@ footer.foot{border-top:1px solid var(--line);padding:34px 0}
   <div class="container">
     <div class="sec-head">
       <div>
-        <span class="eyebrow reveal">Video</span>
-        <h2 class="reveal d1">Reels &amp; <span class="accent">short films</span></h2>
+        <span class="eyebrow reveal">Film</span>
+        <h2 class="reveal d1">Short films &amp; <span class="accent">trailers</span></h2>
       </div>
     </div>
   </div>
   <div class="container">
     <div class="reels reveal" id="reels-track"></div>
-    <div class="more-row" id="reelMoreRow"><button class="btn btn-ghost" id="reelMore">Show more reels</button></div>
   </div>
 </section>
 
@@ -337,14 +360,32 @@ footer.foot{border-top:1px solid var(--line);padding:34px 0}
   <div class="container">
     <div class="sec-head">
       <div>
-        <span class="eyebrow reveal">Photography</span>
-        <h2 class="reveal d1">Selected <span class="accent">photos</span></h2>
+        <span class="eyebrow reveal">Stills</span>
+        <h2 class="reveal d1">Selected <span class="accent">frames</span></h2>
       </div>
-      <p class="reveal d1">Brand shoots, events, community and portraits. Click any photo to see it full size.</p>
+      <p class="reveal d1">From set, portraits, and available light at night. Click any frame to see it full size.</p>
     </div>
     <div class="filter-row reveal" id="filterRow"></div>
     <div class="gallery" id="gallery"></div>
-    <div class="more-row"><button class="btn btn-ghost" id="moreBtn">Show more photos</button></div>
+    <div class="more-row"><button class="btn btn-ghost" id="moreBtn">Show more frames</button></div>
+  </div>
+</section>
+
+<!-- ============ OTHER PROJECTS ============ -->
+<section class="pad" id="other" style="padding-top:0">
+  <div class="container">
+    <div class="more-row"><button class="btn btn-ghost" id="otherBtn" aria-expanded="false">View other projects</button></div>
+    <div class="other-body" id="otherBody" hidden>
+      <div class="sec-head">
+        <div>
+          <span class="eyebrow">Other projects</span>
+          <h2>Commercial, events &amp; <span class="accent">community</span></h2>
+        </div>
+        <p>Work outside of cinematography: product reels, event recaps and photography.</p>
+      </div>
+      <div class="reels" id="other-track"></div>
+      <div class="other-grid" id="otherGrid"></div>
+    </div>
   </div>
 </section>
 
@@ -353,45 +394,35 @@ footer.foot{border-top:1px solid var(--line);padding:34px 0}
   <div class="container">
     <div class="sec-head">
       <div>
-        <span class="eyebrow reveal">Services</span>
-        <h2 class="reveal d1">What I make for <span class="accent">you</span></h2>
+        <span class="eyebrow reveal">On set</span>
+        <h2 class="reveal d1">What I bring to <span class="accent">a shoot</span></h2>
       </div>
-      <p class="reveal d1">One person behind the camera and in the edit. Faster turnaround, one consistent style.</p>
     </div>
 
     <div class="svc reveal">
       <div class="num">01</div>
       <div>
-        <h3>Brand &amp; product content</h3>
-        <p class="svc-desc">Product, storefront and lifestyle photography for launches, campaigns and your feed. One shoot gives you a month of content.</p>
-        <div class="svc-tags"><span class="tag">Product</span><span class="tag">Storefront</span><span class="tag">Campaigns</span><span class="tag">Social</span></div>
+        <h3>Documentary &amp; interview</h3>
+        <p class="svc-desc">Lit sit-down interviews and documentary coverage: framing, key and background light, and consistent skin tones across a full day of subjects.</p>
+        <div class="svc-tags"><span class="tag">Interviews</span><span class="tag">Documentary</span><span class="tag">Lighting</span><span class="tag">Sony FX3</span></div>
       </div>
       <div class="arrow">↗</div>
     </div>
     <div class="svc reveal">
       <div class="num">02</div>
       <div>
-        <h3>Reels &amp; short-form video</h3>
-        <p class="svc-desc">Promos, recaps and short films cut for the way people watch on social: a strong hook, tight pacing and clean sound. Filmed on a Sony FX3 and edited in DaVinci Resolve.</p>
-        <div class="svc-tags"><span class="tag">Reels</span><span class="tag">Promos</span><span class="tag">Short film</span><span class="tag">Editing</span></div>
+        <h3>Short film &amp; narrative</h3>
+        <p class="svc-desc">Cinematic shorts and trailers, from blocking the scene to the final grade.</p>
+        <div class="svc-tags"><span class="tag">Short film</span><span class="tag">Trailers</span><span class="tag">Blocking</span></div>
       </div>
       <div class="arrow">↗</div>
     </div>
     <div class="svc reveal">
       <div class="num">03</div>
       <div>
-        <h3>Events &amp; community</h3>
-        <p class="svc-desc">Camps, conferences, launches and nonprofit programs, covered in photos and a recap video you can share the same week.</p>
-        <div class="svc-tags"><span class="tag">Event coverage</span><span class="tag">Recap video</span><span class="tag">Nonprofits</span></div>
-      </div>
-      <div class="arrow">↗</div>
-    </div>
-    <div class="svc reveal">
-      <div class="num">04</div>
-      <div>
-        <h3>Portraits &amp; BTS</h3>
-        <p class="svc-desc">Headshots, creator portraits and behind-the-scenes photos for film and production sets.</p>
-        <div class="svc-tags"><span class="tag">Portraits</span><span class="tag">Headshots</span><span class="tag">On-set BTS</span></div>
+        <h3>Color &amp; post</h3>
+        <p class="svc-desc">I grade and edit in DaVinci Resolve, so I shoot knowing exactly where the image is going.</p>
+        <div class="svc-tags"><span class="tag">DaVinci Resolve</span><span class="tag">Color</span><span class="tag">Editing</span></div>
       </div>
       <div class="arrow">↗</div>
     </div>
@@ -406,15 +437,14 @@ footer.foot{border-top:1px solid var(--line);padding:34px 0}
     </div>
     <div class="about-body reveal d1">
       <span class="eyebrow">About</span>
-      <p class="lead">I'm Baraa. I turn products, people and moments into content that feels real, not staged.</p>
-      <p>I'm a photographer and video editor based in Dumont, NJ, working across NYC and remotely. I've worked on an Al Jazeera documentary set, covered youth camps for hundreds of people, and made promos for nonprofits and local brands.</p>
-      <p>I shoot the stills, cut the video and deliver a library you can post right away, all with one consistent look.</p>
+      <p class="lead">I'm Baraa, a cinematographer working in documentary and interview.</p>
+      <p>I'm based in New Jersey and work across NYC. I was second videographer on “800 Meters” for Al Jazeera Documentary, and I've shot interviews, short films and promos for ICPC NJ, Islamic Relief USA and InterMSA.</p>
+      <p>I also shoot commercial work for local brands, including product reels for Royal Jewelry.</p>
       <div class="stats">
-        <div class="stat"><div class="n">6+ yrs</div><div class="l">Shooting &amp; editing</div></div>
-        <div class="stat"><div class="n">NJ · NYC</div><div class="l">&amp; remote</div></div>
-        <div class="stat"><div class="n">24h</div><div class="l">Reply time</div></div>
+        <div class="stat"><div class="n">6+ yrs</div><div class="l">Behind the camera</div></div>
+        <div class="stat"><div class="n">NJ · NYC</div><div class="l">&amp; travel</div></div>
       </div>
-      <p class="kit"><b>Kit</b> — Sony FX3 · Sony A7 · 35mm f/1.4 · 25mm f/1.7 · DaVinci Resolve · Lightroom · Photoshop</p>
+      <p class="kit"><b>Kit</b> — Sony FX3 · Sony A7 · 35mm f/1.4 · 25mm f/1.7 · Godox P120L · DaVinci Resolve</p>
     </div>
   </div>
 </section>
@@ -423,14 +453,14 @@ footer.foot{border-top:1px solid var(--line);padding:34px 0}
 <section class="pad contact" id="contact">
   <div class="container">
     <span class="eyebrow">Let's work together</span>
-    <h2 class="reveal">Let's make something your brand is <span class="accent">proud of.</span></h2>
+    <h2 class="reveal">Let's put your story <span class="accent">on camera.</span></h2>
     <div class="cta-row reveal d1">
-      <a class="btn btn-primary" href="mailto:baraa2aziz@gmail.com?subject=Project%20inquiry">Book a shoot</a>
+      <a class="btn btn-primary" href="mailto:baraa2aziz@gmail.com?subject=DP%20inquiry">Get in touch</a>
       <a class="btn btn-ghost" href="https://www.instagram.com/baraa2nassar/" target="_blank" rel="noopener">Follow on Instagram ↗</a>
     </div>
     <div class="meta">
       <a href="mailto:baraa2aziz@gmail.com">baraa2aziz@gmail.com</a>
-      <span>Dumont, NJ · NYC metro &amp; remote</span>
+      <span>New Jersey · NYC metro &amp; travel</span>
       <a href="https://www.instagram.com/baraa2nassar/" target="_blank" rel="noopener">@baraa2nassar</a>
     </div>
   </div>
@@ -438,7 +468,7 @@ footer.foot{border-top:1px solid var(--line);padding:34px 0}
 
 <footer class="foot">
   <div class="container foot-inner">
-    <span>© 2026 Baraa Nassar Studio</span>
+    <span>© 2026 Baraa Nassar</span>
     <div style="display:flex;gap:24px">
       <a href="https://www.instagram.com/baraa2nassar/" target="_blank" rel="noopener">Instagram</a>
       <a href="mailto:baraa2aziz@gmail.com">Email</a>
@@ -456,132 +486,139 @@ footer.foot{border-top:1px solid var(--line);padding:34px 0}
 
 <script>
 /* ---------- Content ---------- */
-const W='img/studio/work/', R='img/studio/reels/', G='img/creative_photos_showreel/';
+const W='img/studio/work/', R='img/studio/reels/', I='img/studio/interviews/', G='img/creative_photos_showreel/';
 // [thumb, full, category, kicker, title]
 const PHOTOS=[
-  [W+'thumb/pins-flatlay.jpg',W+'full/pins-flatlay.jpg','brand','Product','Pins, flat lay',0.596],
-  [W+'thumb/aljazeera-rig.jpg',W+'full/aljazeera-rig.jpg','film','Al Jazeera · 800 Meters','Rigging up',1.5],
-  [W+'thumb/banquet.jpg',W+'full/banquet.jpg','events','Event','Banquet night',1.5],
-  [W+'thumb/intermsa-workshop.jpg',W+'full/intermsa-workshop.jpg','events','InterMSA','Workshop',1.5],
-  [W+'thumb/veiled-storefront.jpg',W+'full/veiled-storefront.jpg','brand','Brand · Storefront','Veiled, opening night',0.668],
-  [W+'thumb/camp24-elder.jpg',W+'full/camp24-elder.jpg','events','ICPC Camp 2024','Under the tree',0.8],
-  [G+'compress/gold3.jpg',G+'gold3.jpg','brand','Product · Nassar Gold','Detail & texture',0.667],
-  [W+'thumb/camp23-huddle.jpg',W+'full/camp23-huddle.jpg','events','ICPC Camp 2023','The huddle',1.495],
-  [W+'thumb/baraa-print.jpg',W+'full/baraa-print.jpg','brand','Product','Golden hour detail',0.8],
-  [G+'compress/gold4.jpg',G+'gold4.jpg','brand','Product · Nassar Gold','Catalog frame',0.667],
-  [W+'thumb/speaker.jpg',W+'full/speaker.jpg','events','Event','Full room',0.668],
-  [W+'thumb/camp23-mentor.jpg',W+'full/camp23-mentor.jpg','events','ICPC Camp 2023','Mentors',1.5],
+  [W+'thumb/aljazeera-800m.jpg',W+'full/aljazeera-800m.jpg','film','Al Jazeera · 800 Meters','Documentary set',1.503],
   [W+'thumb/studio-setup.jpg',W+'full/studio-setup.jpg','film','On set · BTS','Studio interview setup',0.751],
-  [W+'thumb/table-laughs.jpg',W+'full/table-laughs.jpg','events','Community','Candid',1.498],
-  [W+'thumb/icpc-campers.jpg',W+'full/icpc-campers.jpg','events','ICPC Camp','Campers',0.667],
-  [W+'thumb/ummah-professionals.jpg',W+'full/ummah-professionals.jpg','brand','Event · Ummah Professionals','Brand in the room',1.5],
+  [W+'thumb/camp24-elder.jpg',W+'full/camp24-elder.jpg','portraits','ICPC Camp 2024','Under the tree',0.8],
+  [W+'thumb/aljazeera-rig.jpg',W+'full/aljazeera-rig.jpg','film','Al Jazeera · 800 Meters','Rigging up',1.5],
   [W+'thumb/portrait-elder.jpg',W+'full/portrait-elder.jpg','portraits','Portrait','Winter portrait',0.667],
-  [W+'thumb/intermsa-conference.jpg',W+'full/intermsa-conference.jpg','events','InterMSA','Conference',0.667],
-  [W+'thumb/veiled-launch.jpg',W+'full/veiled-launch.jpg','brand','Brand · Veiled','Launch night',0.669],
-  [W+'thumb/camp25-cart.jpg',W+'full/camp25-cart.jpg','events','ICPC Camp 2025','Golf cart',0.8],
-  [W+'thumb/lake-sunset.jpg',W+'full/lake-sunset.jpg','events','ICPC Camp','Last light on the lake',1.5],
-  [W+'thumb/shop-owner.jpg',W+'full/shop-owner.jpg','brand','Small business','Owner portrait',1.331],
-  [W+'thumb/camp23-court.jpg',W+'full/camp23-court.jpg','events','ICPC Camp 2023','Courtside',1.5],
+  [W+'thumb/lake-sunset.jpg',W+'full/lake-sunset.jpg','light','ICPC Camp','Last light on the lake',1.5],
   [W+'thumb/aljazeera-set.jpg',W+'full/aljazeera-set.jpg','film','Al Jazeera · 800 Meters','Behind the scenes',1.331],
   [W+'thumb/portrait-sky.jpg',W+'full/portrait-sky.jpg','portraits','Portrait','Looking up',1.498],
-  [W+'thumb/camp24-hype.jpg',W+'full/camp24-hype.jpg','events','ICPC Camp 2024','Hype',1.495],
-  [W+'thumb/soccer.jpg',W+'full/soccer.jpg','portraits','Portrait','Pause',0.8],
-  [W+'thumb/camp25-porch.jpg',W+'full/camp25-porch.jpg','events','ICPC Camp 2025','Evening talk',0.75],
-  [W+'thumb/camp23-lake.jpg',W+'full/camp23-lake.jpg','events','ICPC Camp 2023','Into the lake',1.5],
-  [W+'thumb/mentorship.jpg',W+'full/mentorship.jpg','events','Community','Mentorship',1.5],
-  [W+'thumb/camp25-dusk.jpg',W+'full/camp25-dusk.jpg','events','ICPC Camp 2025','Dusk',1.5],
-  [W+'thumb/aljazeera-800m.jpg',W+'full/aljazeera-800m.jpg','film','Al Jazeera · 800 Meters','Documentary set',1.503],
-  [W+'thumb/conversation.jpg',W+'full/conversation.jpg','events','Community','Conversation',1.498],
-  [W+'thumb/fireworks.jpg',W+'full/fireworks.jpg','portraits','Blue hour','Far away',0.799],
-  [W+'thumb/giant-chair.jpg',W+'full/giant-chair.jpg','events','ICPC Camp 2022','The giant chair',0.75],
-  [W+'thumb/eid-mubarak.jpg',W+'full/eid-mubarak.jpg','events','Community','Eid morning',0.667],
-  [W+'thumb/graduation.jpg',W+'full/graduation.jpg','portraits','Portrait','Graduation day',1.339],
-  [W+'thumb/lakeside.jpg',W+'full/lakeside.jpg','portraits','Portrait','Lakeside',1.498],
-  [W+'thumb/camp21-thumbs.jpg',W+'full/camp21-thumbs.jpg','events','Camp 2021','Good energy',1.0],
-  [W+'thumb/camp-smile.jpg',W+'full/camp-smile.jpg','events','ICPC Camp','Between sessions',1.333],
-  [W+'thumb/camp25-listening.jpg',W+'full/camp25-listening.jpg','events','ICPC Camp 2025','Listening',0.75],
-  [W+'thumb/camp25-net.jpg',W+'full/camp25-net.jpg','events','ICPC Camp 2025','Behind the net',0.798],
-  [W+'thumb/dusk-lot.jpg',W+'full/dusk-lot.jpg','portraits','Landscape','Dusk',1.5],
-  [W+'thumb/woods.jpg',W+'full/woods.jpg','portraits','Portrait','In the woods',1.498],
-  [W+'thumb/snow-lamp.jpg',W+'full/snow-lamp.jpg','portraits','Night','Under the lamp',0.8],
-  [W+'thumb/circle-under-trees.jpg',W+'full/circle-under-trees.jpg','events','Community','Circle under the trees',0.667],
+  [W+'thumb/camp25-storyteller.jpg',W+'full/camp25-storyteller.jpg','light','ICPC Camp 2025','Stories by the fire',0.75],
+  [W+'thumb/snow-lamp.jpg',W+'full/snow-lamp.jpg','light','Night','Under the lamp',0.8],
   [W+'thumb/above-clouds.jpg',W+'full/above-clouds.jpg','portraits','Landscape','Above the clouds',0.668],
-  [W+'thumb/camp22-window.jpg',W+'full/camp22-window.jpg','events','ICPC Camp 2022','Through the window',0.8],
-  [W+'thumb/camp-grass.jpg',W+'full/camp-grass.jpg','events','Camp','Details',1.498],
-  [W+'thumb/sparkler-kid.jpg',W+'full/sparkler-kid.jpg','events','Community','Sparkler',0.667],
-  [W+'thumb/camp24-sparkler.jpg',W+'full/camp24-sparkler.jpg','events','ICPC Camp 2024','Sparkler',0.8],
-  [W+'thumb/camp23-porch.jpg',W+'full/camp23-porch.jpg','events','ICPC Camp 2023','Arrival',1.5],
-  [W+'thumb/night-program.jpg',W+'full/night-program.jpg','events','Event','Night program',1.779],
-  [W+'thumb/camp25-marshmallows.jpg',W+'full/camp25-marshmallows.jpg','events','ICPC Camp 2025','Campfire night',1.5],
-  [G+'compress/gold2.jpg',G+'gold2.jpg','brand','Product · Nassar Gold','Hero shot',1.511],
-  [G+'compress/gold1.jpg',G+'gold1.jpg','brand','Product · Nassar Gold','Fine jewelry, lit for luxury',1.377],
-  [W+'thumb/camp25-storyteller.jpg',W+'full/camp25-storyteller.jpg','events','ICPC Camp 2025','Stories by the fire',0.75],
-  [W+'thumb/bonfire-stars.jpg',W+'full/bonfire-stars.jpg','events','Camp','Sparks and stars',0.75],
   [W+'thumb/aljazeera-monitor.jpg',W+'full/aljazeera-monitor.jpg','film','Al Jazeera · 800 Meters','Monitor check',0.751],
-  [W+'thumb/camp25-torches.jpg',W+'full/camp25-torches.jpg','events','ICPC Camp 2025','Fire torches',1.5],
-  [W+'thumb/camp24-beam.jpg',W+'full/camp24-beam.jpg','events','ICPC Camp 2024','Night sky',0.751],
-  [W+'thumb/camp21-run.jpg',W+'full/camp21-run.jpg','events','Camp 2021','Sprint',1.0],
+  [W+'thumb/woods.jpg',W+'full/woods.jpg','portraits','Portrait','In the woods',1.498],
+  [W+'thumb/camp25-dusk.jpg',W+'full/camp25-dusk.jpg','light','ICPC Camp 2025','Dusk',1.5],
+  [W+'thumb/shop-owner.jpg',W+'full/shop-owner.jpg','portraits','Small business','Owner portrait',1.331],
+  [W+'thumb/bonfire-stars.jpg',W+'full/bonfire-stars.jpg','light','Camp','Sparks and stars',0.75],
+  [W+'thumb/soccer.jpg',W+'full/soccer.jpg','portraits','Portrait','Pause',0.8],
+  [W+'thumb/camp25-listening.jpg',W+'full/camp25-listening.jpg','portraits','ICPC Camp 2025','Listening',0.75],
+  [W+'thumb/lakeside.jpg',W+'full/lakeside.jpg','portraits','Portrait','Lakeside',1.498],
+  [W+'thumb/camp25-torches.jpg',W+'full/camp25-torches.jpg','light','ICPC Camp 2025','Fire torches',1.5],
   [W+'thumb/ferris-wheel.jpg',W+'full/ferris-wheel.jpg','portraits','Portrait','City lights',0.8],
+  [W+'thumb/dusk-lot.jpg',W+'full/dusk-lot.jpg','light','Landscape','Dusk',1.5],
+  [W+'thumb/camp24-sparkler.jpg',W+'full/camp24-sparkler.jpg','light','ICPC Camp 2024','Sparkler',0.8],
+  [W+'thumb/fireworks.jpg',W+'full/fireworks.jpg','light','Blue hour','Far away',0.799],
+  [W+'thumb/sparkler-kid.jpg',W+'full/sparkler-kid.jpg','light','Community','Sparkler',0.667],
+  [W+'thumb/camp25-marshmallows.jpg',W+'full/camp25-marshmallows.jpg','light','ICPC Camp 2025','Campfire night',1.5],
+  [W+'thumb/camp24-beam.jpg',W+'full/camp24-beam.jpg','light','ICPC Camp 2024','Night sky',0.751],
 ];
-const CATS=[['all','All'],['brand','Brand & product'],['events','Events & community'],['portraits','Portraits & landscape'],['film','Film BTS']];
-// [file, kicker, title, landscape?]
-// [file or 'yt:ID', kicker, title, landscape?]
+const CATS=[['all','All'],['film','On set'],['portraits','Portraits'],['light','Available light']];
+// [file or 'yt:ID', kicker, title, landscape?, likes?]
+const INTERVIEWS=[
+  ['icpc-interview-mohamed-el-filali','ICPC NJ','Mohamed El Filali',true],
+  ['icpc-interview-living-room-set','ICPC Camp 2025 documentary','Living-room interview',true],
+  ['icpc-camp-documentary-interview-arwa-ensour','ICPC Camp documentary','Arwa Ensour',true],
+  ['icpc-camp-documentary-interview-muneer-hamdeh','ICPC Camp documentary','Muneer Hamdeh',true],
+];
+const BTS=[
+  ['bts-masjid-interview','ICPC NJ','Interview in the masjid',false,null,'BTS'],
+  ['bts-interview','Interview','Lighting the interview',false,null,'BTS'],
+  ['bts-living-room','800 Meters · Al Jazeera','Blocking the scene',false,null,'BTS'],
+  ['bts-800m-warehouse','800 Meters · Al Jazeera','Warehouse set',false,null,'BTS'],
+];
 const REELS=[
+  ['yt:bDSGAFstCxw','Trailer','The Legacy',true],
+  ['dabka-islamic-relief','Intro · Islamic Relief USA','Dabka',true],
+  ['yt:4FEIlZBXXWQ','Short','Between the two brackets',true],
+  ['spamming-timeline','Short film · Director','Spamming Timeline'],
+  ['aftermath-promo','Promo · Aftermath','Ahmad Sehwail'],
+];
+// Non-DP work, collapsed under "Other projects"
+const OTHER_REELS=[
+  ['royal-flower-layers','Commercial · Royal Jewelry','Flower layers',false,'109K'],
+  ['royal-new-in-stock','Commercial · Royal Jewelry','New in stock',false,'32K'],
   ['ramadan-icpc','Promo · ICPC NJ','If Ramadan was a person'],
   ['camp-2024','Event recap','Camp 2024 moments'],
-  ['spamming-timeline','Short film · Director & editor','Spamming Timeline'],
-  ['something-to-tell','Cinematic · Sony A7','Something I want to tell you'],
-  ['yt:bDSGAFstCxw','Trailer','The Legacy',true],
-  ['dabka-islamic-relief','Intro · Islamic Relief USA','Dabka, online',true],
-  ['intermsa','Promo · InterMSA','We don’t follow the algorithm'],
-  ['essential','Cinematic edit','What is essential is invisible'],
   ['eid','Story','Eid, through a kid’s eyes'],
-  ['summer-23','Cinematic edit','Eid al-Adha ’23'],
-  ['yt:4FEIlZBXXWQ','Short','Between the two brackets',true],
-  ['yt:uEhN33LaOvE','Event film · 18 min','Darul-Arqam & Al-Manara graduation',true],
-  ['bts-living-room','BTS · 800 Meters','Blocking the scene'],
-  ['bts-warehouse','BTS · 800 Meters','Warehouse set'],
-  ['bts-interview','BTS','Interview setup'],
-  ['timeline-breakdown','Editing breakdown','Three days, one video'],
   ['cameras','Short','Not all cameras are equal'],
+  ['timeline-breakdown','Editing breakdown','Three days, one video'],
+  ['yt:uEhN33LaOvE','Event film · 18 min','Darul-Arqam & Al-Manara graduation',true],
+];
+// [thumb, full, kicker, title, ratio]
+const OTHER_PHOTOS=[
+  [W+'thumb/banquet.jpg',W+'full/banquet.jpg','Event','Banquet night',1.5],
+  [W+'thumb/intermsa-workshop.jpg',W+'full/intermsa-workshop.jpg','InterMSA','Workshop',1.5],
+  [W+'thumb/veiled-storefront.jpg',W+'full/veiled-storefront.jpg','Brand · Storefront','Veiled, opening night',0.668],
+  [G+'compress/gold3.jpg',G+'gold3.jpg','Product · Nassar Gold','Detail & texture',0.667],
+  [W+'thumb/camp23-huddle.jpg',W+'full/camp23-huddle.jpg','ICPC Camp 2023','The huddle',1.495],
+  [W+'thumb/speaker.jpg',W+'full/speaker.jpg','Event','Full room',0.668],
+  [W+'thumb/table-laughs.jpg',W+'full/table-laughs.jpg','Community','Candid',1.498],
+  [W+'thumb/icpc-campers.jpg',W+'full/icpc-campers.jpg','ICPC Camp','Campers',0.667],
+  [W+'thumb/intermsa-conference.jpg',W+'full/intermsa-conference.jpg','InterMSA','Conference',0.667],
+  [W+'thumb/veiled-launch.jpg',W+'full/veiled-launch.jpg','Brand · Veiled','Launch night',0.669],
+  [W+'thumb/camp23-court.jpg',W+'full/camp23-court.jpg','ICPC Camp 2023','Courtside',1.5],
+  [W+'thumb/camp24-hype.jpg',W+'full/camp24-hype.jpg','ICPC Camp 2024','Hype',1.495],
+  [W+'thumb/camp25-porch.jpg',W+'full/camp25-porch.jpg','ICPC Camp 2025','Evening talk',0.75],
+  [W+'thumb/camp23-lake.jpg',W+'full/camp23-lake.jpg','ICPC Camp 2023','Into the lake',1.5],
+  [W+'thumb/mentorship.jpg',W+'full/mentorship.jpg','Community','Mentorship',1.5],
+  [W+'thumb/conversation.jpg',W+'full/conversation.jpg','Community','Conversation',1.498],
+  [W+'thumb/giant-chair.jpg',W+'full/giant-chair.jpg','ICPC Camp 2022','The giant chair',0.75],
+  [W+'thumb/eid-mubarak.jpg',W+'full/eid-mubarak.jpg','Community','Eid morning',0.667],
+  [W+'thumb/graduation.jpg',W+'full/graduation.jpg','Portrait','Graduation day',1.339],
+  [W+'thumb/camp21-thumbs.jpg',W+'full/camp21-thumbs.jpg','Camp 2021','Good energy',1.0],
+  [W+'thumb/camp-smile.jpg',W+'full/camp-smile.jpg','ICPC Camp','Between sessions',1.333],
+  [W+'thumb/camp25-net.jpg',W+'full/camp25-net.jpg','ICPC Camp 2025','Behind the net',0.798],
+  [W+'thumb/circle-under-trees.jpg',W+'full/circle-under-trees.jpg','Community','Circle under the trees',0.667],
+  [W+'thumb/camp22-window.jpg',W+'full/camp22-window.jpg','ICPC Camp 2022','Through the window',0.8],
+  [W+'thumb/camp-grass.jpg',W+'full/camp-grass.jpg','Camp','Details',1.498],
+  [W+'thumb/camp23-porch.jpg',W+'full/camp23-porch.jpg','ICPC Camp 2023','Arrival',1.5],
+  [W+'thumb/night-program.jpg',W+'full/night-program.jpg','Event','Night program',1.779],
+  [G+'compress/gold2.jpg',G+'gold2.jpg','Product · Nassar Gold','Hero shot',1.511],
+  [G+'compress/gold1.jpg',G+'gold1.jpg','Product · Nassar Gold','Fine jewelry, lit for luxury',1.377],
+  [W+'thumb/camp21-run.jpg',W+'full/camp21-run.jpg','Camp 2021','Sprint',1.0],
 ];
 
 /* ---------- Build: marquee ---------- */
-const pick=['lake-sunset','veiled-storefront','camp23-huddle','camp24-hype','camp25-marshmallows','fireworks','aljazeera-rig','speaker','camp24-elder','above-clouds','ummah-professionals','giant-chair','soccer','camp21-thumbs'];
+const pick=['aljazeera-rig','camp24-elder','lake-sunset','studio-setup','portrait-elder','camp25-storyteller','above-clouds','aljazeera-800m','snow-lamp','bonfire-stars','woods','camp25-dusk','aljazeera-set','soccer'];
 const half=Math.ceil(pick.length/2);
 [[pick.slice(0,half),'mRow1'],[pick.slice(half),'mRow2']].forEach(([list,id])=>{
   const html=list.map(n=>`<img src="${W}thumb/${n}.jpg" alt="" loading="lazy">`).join('');
   document.getElementById(id).innerHTML=html+html; // doubled for seamless loop
 });
 
-// [file, kicker, title, likes]
-const ROYAL=[
-  ['royal-flower-layers','Royal Jewelry','Flower layers','109K likes'],
-  ['royal-new-in-stock','Royal Jewelry','New in stock','32K likes'],
-];
-
 /* ---------- Build: reels ---------- */
-const reelCard=([f,k,t,land,likes])=>{
+const reelCard=([f,k,t,land,likes,tag],B=R)=>{
   const yt=f.startsWith('yt:')?f.slice(3):null;
   return `
-  <div class="reel${land?' land':''}" ${yt?`data-yt="${yt}"`:`data-video="${R}${f}.mp4"`} data-cap="${t}">
+  <div class="reel${land?' land':''}" ${yt?`data-yt="${yt}"`:`data-video="${B}${f}.mp4"`} data-cap="${t}">
     <div class="frame">
-      <img loading="lazy" src="${yt?`https://i.ytimg.com/vi/${yt}/hqdefault.jpg`:R+f+'.jpg'}" alt="${t}">
-      ${yt?'':`<video muted loop playsinline preload="none" src="${R}${f}.mp4"></video>`}
-      <span class="badge">${yt?'Film':'Reel'}</span>
-      ${likes?`<span class="likes">♥ ${likes}</span>`:''}
+      <img loading="lazy" src="${yt?`https://i.ytimg.com/vi/${yt}/hqdefault.jpg`:B+f+'.jpg'}" alt="${t}">
+      ${yt?'':`<video muted loop playsinline preload="none" src="${B}${f}.mp4"></video>`}
+      <span class="badge">${tag||(yt?'Film':B===I?'Interview':likes?'Commercial':'Clip')}</span>
+      ${likes?`<span class="likes">♥ ${likes} likes</span>`:''}
       <span class="pbtn"><svg viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg></span>
     </div>
     <div class="rt">${t}</div><div class="rk">${k}</div>
   </div>`;};
 const track=document.getElementById('reels-track');
-track.innerHTML=REELS.map(reelCard).join('');
-const royalTrack=document.getElementById('royal-track');
-royalTrack.innerHTML=ROYAL.map(([f,k,t,likes])=>reelCard([f,k,t,false,likes])).join('');
+track.innerHTML=REELS.map(x=>reelCard(x)).join('');
+const ivTrack=document.getElementById('interviews-track');
+ivTrack.innerHTML=INTERVIEWS.map(x=>reelCard(x,I)).join('');
+const btsTrack=document.getElementById('bts-track');
+btsTrack.innerHTML=BTS.map(x=>reelCard(x)).join('');
+const otherTrack=document.getElementById('other-track');
+otherTrack.innerHTML=OTHER_REELS.map(x=>reelCard(x)).join('');
 const reelEls=[...track.querySelectorAll('.reel')];
-const royalEls=[...royalTrack.querySelectorAll('.reel')];
+const btsEls=[...btsTrack.querySelectorAll('.reel')];
+const otherEls=[...otherTrack.querySelectorAll('.reel')];
+const ivEls=[...ivTrack.querySelectorAll('.reel')];
 const canHover=matchMedia('(hover:hover)').matches;
-[...reelEls,...royalEls].forEach(r=>{
+[...ivEls,...btsEls,...reelEls,...otherEls].forEach(r=>{
   const v=r.querySelector('video');
   if(!v)return;
   if(canHover){
@@ -589,11 +626,6 @@ const canHover=matchMedia('(hover:hover)').matches;
     r.addEventListener('mouseleave',()=>{v.pause();r.classList.remove('playing')});
   }
 });
-const REEL_LIMIT=10;
-reelEls.forEach((r,i)=>{if(i>=REEL_LIMIT)r.classList.add('is-hidden')});
-const reelMoreRow=document.getElementById('reelMoreRow');
-if(reelEls.length<=REEL_LIMIT)reelMoreRow.style.display='none';
-document.getElementById('reelMore').onclick=()=>{reelEls.forEach(r=>r.classList.remove('is-hidden'));reelMoreRow.style.display='none'};
 
 /* ---------- Build: gallery ---------- */
 const gallery=document.getElementById('gallery');
@@ -669,13 +701,29 @@ function render(){
 function open(group,it){
   list=group;idx=list.indexOf(it);render();
   lb.classList.add('open');lb.setAttribute('aria-hidden','false');document.body.style.overflow='hidden';
-  [...reelEls,...royalEls].forEach(r=>{r.querySelector('video')?.pause();r.classList.remove('playing')});
+  [...ivEls,...btsEls,...reelEls,...otherEls].forEach(r=>{r.querySelector('video')?.pause();r.classList.remove('playing')});
 }
 function close(){lb.classList.remove('open');lb.setAttribute('aria-hidden','true');lbMedia.innerHTML='';document.body.style.overflow=''}
 function step(d){idx=(idx+d+list.length)%list.length;render()}
 items.forEach(it=>it.addEventListener('click',()=>open(items.filter(x=>!x.classList.contains('is-hidden')),it)));
 reelEls.forEach(r=>r.addEventListener('click',()=>open(reelEls,r)));
-royalEls.forEach(r=>r.addEventListener('click',()=>open(royalEls,r)));
+btsEls.forEach(r=>r.addEventListener('click',()=>open(btsEls,r)));
+otherEls.forEach(r=>r.addEventListener('click',()=>open(otherEls,r)));
+const otherGrid=document.getElementById('otherGrid');
+otherGrid.innerHTML=OTHER_PHOTOS.map(([th,full,k,t])=>`
+  <div class="g-item" data-full="${full}" data-cap="${k} — ${t}">
+    <img loading="lazy" src="${th}" alt="${t}">
+  </div>`).join('');
+const otherItems=[...otherGrid.querySelectorAll('.g-item')];
+otherItems.forEach(it=>it.addEventListener('click',()=>open(otherItems,it)));
+const otherBtn=document.getElementById('otherBtn'),otherBody=document.getElementById('otherBody');
+otherBtn.onclick=()=>{
+  const show=otherBody.hidden;
+  otherBody.hidden=!show;
+  otherBtn.setAttribute('aria-expanded',show);
+  otherBtn.textContent=show?'Hide other projects':'View other projects';
+};
+ivEls.forEach(r=>r.addEventListener('click',()=>open(ivEls,r)));
 const fis=[...document.querySelectorAll('#featureImgs .fi')];
 fis.forEach(f=>f.addEventListener('click',()=>open(fis,f)));
 document.getElementById('lbClose').onclick=close;
